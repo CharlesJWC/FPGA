@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/gated_D_latch/gated_D_latch.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/gated_D_latch/tb_gated_D_latch.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/gated_D_latch/db/gated_D_latch.cbx.xml
+design_name = gated_D_latch
+instance = comp, \D~I , D, gated_D_latch, 1
+instance = comp, \G~I , G, gated_D_latch, 1
+instance = comp, \NA5~0 , NA5~0, gated_D_latch, 1
+instance = comp, \Qbar~I , Qbar, gated_D_latch, 1
+instance = comp, \Q~I , Q, gated_D_latch, 1

@@ -1,0 +1,9 @@
+|gated_D_latch
+D => NA1.IN0
+D => NA3.IN0
+G => NA1.IN1
+G => NA3.IN1
+Qbar <= Qbar.DB_MAX_OUTPUT_PORT_TYPE
+Q <= NA4.DB_MAX_OUTPUT_PORT_TYPE
+
+

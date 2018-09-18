@@ -1,0 +1,4 @@
+set tool_name "ModelSim (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {Traffic_Light_Controller.vo Traffic_Light_Controller_v.sdo}}
+}

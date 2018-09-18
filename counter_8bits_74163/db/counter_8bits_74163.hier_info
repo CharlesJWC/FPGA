@@ -1,0 +1,80 @@
+|counter_8bits_74163
+clk => clk.IN2
+Load_N => Load_N.IN2
+Clear_N => Clear_N.IN2
+P => P.IN2
+T => T.IN2
+Din1[0] => Din1[0].IN1
+Din1[1] => Din1[1].IN1
+Din1[2] => Din1[2].IN1
+Din1[3] => Din1[3].IN1
+Din2[0] => Din2[0].IN1
+Din2[1] => Din2[1].IN1
+Din2[2] => Din2[2].IN1
+Din2[3] => Din2[3].IN1
+Qout1[0] <= counter_74163:Lower_Counter.Q
+Qout1[1] <= counter_74163:Lower_Counter.Q
+Qout1[2] <= counter_74163:Lower_Counter.Q
+Qout1[3] <= counter_74163:Lower_Counter.Q
+Qout2[0] <= counter_74163:Upper_Counter.Q
+Qout2[1] <= counter_74163:Upper_Counter.Q
+Qout2[2] <= counter_74163:Upper_Counter.Q
+Qout2[3] <= counter_74163:Upper_Counter.Q
+Carry[0] <= counter_74163:Lower_Counter.Carry
+Carry[1] <= counter_74163:Upper_Counter.Carry
+
+
+|counter_8bits_74163|counter_74163:Lower_Counter
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+Load_N => Q.OUTPUTSELECT
+Load_N => Q.OUTPUTSELECT
+Load_N => Q.OUTPUTSELECT
+Load_N => Q.OUTPUTSELECT
+Clear_N => Q.OUTPUTSELECT
+Clear_N => Q.OUTPUTSELECT
+Clear_N => Q.OUTPUTSELECT
+Clear_N => Q.OUTPUTSELECT
+P => always0.IN0
+T => Carry.IN1
+T => always0.IN1
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+D[3] => Q.DATAB
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_8bits_74163|counter_74163:Upper_Counter
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+Load_N => Q.OUTPUTSELECT
+Load_N => Q.OUTPUTSELECT
+Load_N => Q.OUTPUTSELECT
+Load_N => Q.OUTPUTSELECT
+Clear_N => Q.OUTPUTSELECT
+Clear_N => Q.OUTPUTSELECT
+Clear_N => Q.OUTPUTSELECT
+Clear_N => Q.OUTPUTSELECT
+P => always0.IN0
+T => Carry.IN1
+T => always0.IN1
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+D[3] => Q.DATAB
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+

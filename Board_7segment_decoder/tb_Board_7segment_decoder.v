@@ -1,0 +1,36 @@
+module tb_Board_7segment_decoder; 
+
+reg [13:0] sw_input;
+//input [9:0] sw_input;
+
+wire [6:0] segment_1000;
+wire [6:0] segment_100;
+wire [6:0] segment_10;
+wire [6:0] segment_1;
+
+Board_7segment_decoder BCDto7Segment
+(
+	.sw(sw_input),
+	.segment_1000(segment_1000),
+	.segment_100(segment_100),
+	.segment_10(segment_10),
+	.segment_1(segment_1)
+); 
+
+
+initial	sw_input = 14'd0;
+
+initial
+begin
+	#10 sw_input = 14'b00_0011_0010_0111;	//807
+	#10 sw_input = 14'b00_0011_0000_1001;	//777
+	#10 sw_input = 14'b00_0011_1111_1111;	//1023
+	#10 sw_input = 14'b01_0111_1000_1001;	//6025
+	#10 sw_input = 14'b01_1110_0110_0001;	//7777
+	#10 sw_input = 14'b10_0111_0000_1111;	//9999
+	#10 sw_input = 14'b10_0111_0001_0000;	//10000
+	#10 sw_input = 14'b11_1111_1111_1111;	//16383
+	#10 sw_input = 14'b00_0000_0000_0000;	//0
+end
+
+endmodule

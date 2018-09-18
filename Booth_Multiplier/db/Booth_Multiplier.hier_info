@@ -1,0 +1,49 @@
+|Booth_Multiplier
+clk => clk.IN1
+St => Load.DATAB
+St => Selector1.IN2
+St => Selector0.IN0
+Mtc[0] => RegMtc_C[0].DATAIN
+Mtc[1] => RegMtc_C[1].DATAIN
+Mtc[2] => RegMtc_C[2].DATAIN
+Mtc[3] => RegMtc_C[3].DATAIN
+Mtc[4] => RegMtc_C[4].DATAIN
+Mtc[5] => RegMtc_C[5].DATAIN
+Mtc[6] => RegMtc_C[6].DATAIN
+Mtc[7] => RegMtc_C[7].DATAIN
+Mtp[0] => RegMtp_B.DATAB
+Mtp[1] => RegMtp_B.DATAB
+Mtp[2] => RegMtp_B.DATAB
+Mtp[3] => RegMtp_B.DATAB
+Mtp[4] => RegMtp_B.DATAB
+Mtp[5] => RegMtp_B.DATAB
+Mtp[6] => RegMtp_B.DATAB
+Mtp[7] => RegMtp_B.DATAB
+Product[0] <= RegMtp_B[1].DB_MAX_OUTPUT_PORT_TYPE
+Product[1] <= RegMtp_B[2].DB_MAX_OUTPUT_PORT_TYPE
+Product[2] <= RegMtp_B[3].DB_MAX_OUTPUT_PORT_TYPE
+Product[3] <= RegMtp_B[4].DB_MAX_OUTPUT_PORT_TYPE
+Product[4] <= RegMtp_B[5].DB_MAX_OUTPUT_PORT_TYPE
+Product[5] <= RegMtp_B[6].DB_MAX_OUTPUT_PORT_TYPE
+Product[6] <= RegMtp_B[7].DB_MAX_OUTPUT_PORT_TYPE
+Product[7] <= RegMtp_B[8].DB_MAX_OUTPUT_PORT_TYPE
+Product[8] <= RegACC_A[0].DB_MAX_OUTPUT_PORT_TYPE
+Product[9] <= RegACC_A[1].DB_MAX_OUTPUT_PORT_TYPE
+Product[10] <= RegACC_A[2].DB_MAX_OUTPUT_PORT_TYPE
+Product[11] <= RegACC_A[3].DB_MAX_OUTPUT_PORT_TYPE
+Product[12] <= RegACC_A[4].DB_MAX_OUTPUT_PORT_TYPE
+Product[13] <= RegACC_A[5].DB_MAX_OUTPUT_PORT_TYPE
+Product[14] <= RegACC_A[6].DB_MAX_OUTPUT_PORT_TYPE
+Ready <= Ready.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Booth_Multiplier|upcounter_3bits:counter
+clk => Count[0].CLK
+clk => Count[1].CLK
+clk => Count[2].CLK
+CNT => Count[1].ENA
+CNT => Count[0].ENA
+CNT => Count[2].ENA
+K <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+

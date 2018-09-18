@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DE1_Segment_Timer">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_Segment_Timer|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_vcm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_Segment_Timer|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_vcm.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

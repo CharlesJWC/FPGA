@@ -1,0 +1,26 @@
+module MY_TEST
+(
+	input clk,
+	output reg [5:0] outlet
+);
+
+reg set;
+
+initial 
+begin
+	outlet = 6'd0;
+	set = 0;
+end
+
+always @(posedge clk)
+begin
+	set = !set;
+end
+
+always @(set)
+begin
+	if(set) outlet <= 6'd49; 
+	else outlet <= 2'd01; 
+end
+
+endmodule

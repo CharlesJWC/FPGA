@@ -1,0 +1,16 @@
+Flow Status : Successful - Wed Oct 25 09:34:36 2017
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : Multiplier_32bit
+Top-level Entity Name : Multiplier_32bit
+Family : Stratix II
+Met timing requirements : N/A
+Logic utilization : N/A until Partition Merge
+    Combinational ALUTs : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total block memory bits : N/A until Partition Merge
+DSP block 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
+Total DLLs : N/A until Partition Merge

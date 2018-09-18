@@ -1,0 +1,11 @@
+|fullAdder
+sum <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => s1.IN0
+a => c1.IN0
+b => s1.IN1
+b => c1.IN1
+c_in => comb.IN1
+c_in => s2.IN1
+
+

@@ -1,0 +1,18 @@
+module mux_2x1(in0,in1,select,out);
+
+input in0, in1, select;
+output reg out;
+
+/*
+always @(select, in0, in1)
+begin
+	case(select)
+	1'b0 : out = in0;
+	default : out = in1;
+	endcase
+	 //out = select ? in1 : in0; 
+end
+*/
+assign out = select? in1 : in0;
+
+endmodule

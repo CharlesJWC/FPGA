@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/MY_TEST/MY_TEST.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/MY_TEST/Verilog2.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/MY_TEST/db/MY_TEST.cbx.xml
+design_name = MY_TEST
+instance = comp, \clk~I , clk, MY_TEST, 1
+instance = comp, \set~0 , set~0, MY_TEST, 1
+instance = comp, \outlet[0]~I , outlet[0], MY_TEST, 1
+instance = comp, \outlet[1]~I , outlet[1], MY_TEST, 1
+instance = comp, \outlet[2]~I , outlet[2], MY_TEST, 1
+instance = comp, \outlet[3]~I , outlet[3], MY_TEST, 1
+instance = comp, \outlet[4]~I , outlet[4], MY_TEST, 1
+instance = comp, \outlet[5]~I , outlet[5], MY_TEST, 1

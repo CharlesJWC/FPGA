@@ -1,0 +1,4 @@
+set tool_name "ModelSim (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {JK_FlipFlop.vo JK_FlipFlop_v.sdo}}
+}

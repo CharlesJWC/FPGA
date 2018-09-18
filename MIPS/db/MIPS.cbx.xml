@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="MIPS">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS|Register:REG|altsyncram:REG_rtl_0" CBX_FILE_NAME="altsyncram_f7l1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS|Register:REG|altsyncram:REG_rtl_1" CBX_FILE_NAME="altsyncram_f7l1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

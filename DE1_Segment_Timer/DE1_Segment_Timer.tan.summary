@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 24.739 ns
+From           : m_cnt[3]
+To             : segment_100[4]
+From Clock     : clk_50M
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'my_clock_gen:clock_gen|altpll:altpll_component|_clk0'
+Slack          : 96.222 ns
+Required Time  : 10.00 MHz ( period = 100.000 ns )
+Actual Time    : 264.69 MHz ( period = 3.778 ns )
+From           : cnt_100K[5]
+To             : clk_1K
+From Clock     : my_clock_gen:clock_gen|altpll:altpll_component|_clk0
+To Clock       : my_clock_gen:clock_gen|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'my_clock_gen:clock_gen|altpll:altpll_component|_clk0'
+Slack          : 0.445 ns
+Required Time  : 10.00 MHz ( period = 100.000 ns )
+Actual Time    : N/A
+From           : cnt_10M[1]
+To             : cnt_10M[1]
+From Clock     : my_clock_gen:clock_gen|altpll:altpll_component|_clk0
+To Clock       : my_clock_gen:clock_gen|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

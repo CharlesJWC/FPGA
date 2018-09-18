@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Workspace/Altera_Quartus_Workspace/MY_TEST/simulation/modelsim
+vMY_TEST
+Z1 !s110 1510098593
+!i10b 1
+!s100 F3GWjR3U8C9=e3`IG2n]d3
+I8d<OR=;Gk^MYN=z2F3YCH0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1510098547
+8D:/Workspace/Altera_Quartus_Workspace/MY_TEST/MY_TEST.v
+FD:/Workspace/Altera_Quartus_Workspace/MY_TEST/MY_TEST.v
+L0 1
+Z3 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z4 !s108 1510098593.000000
+!s107 D:/Workspace/Altera_Quartus_Workspace/MY_TEST/MY_TEST.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/MY_TEST|D:/Workspace/Altera_Quartus_Workspace/MY_TEST/MY_TEST.v|
+!s101 -O0
+!i113 1
+Z5 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+Z6 !s92 -vlog01compat -work work +incdir+D:/Workspace/Altera_Quartus_Workspace/MY_TEST -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+n@m@y_@t@e@s@t
+vtb_MY_TEST
+R1
+!i10b 1
+!s100 Y_V?FXPV9CIaF?ZKcane_2
+IofnJz``Q8B1Bfg6H^VChX1
+R2
+R0
+w1510060694
+8D:/Workspace/Altera_Quartus_Workspace/MY_TEST/Verilog2.v
+FD:/Workspace/Altera_Quartus_Workspace/MY_TEST/Verilog2.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Workspace/Altera_Quartus_Workspace/MY_TEST/Verilog2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/MY_TEST|D:/Workspace/Altera_Quartus_Workspace/MY_TEST/Verilog2.v|
+!s101 -O0
+!i113 1
+R5
+R6
+ntb_@m@y_@t@e@s@t

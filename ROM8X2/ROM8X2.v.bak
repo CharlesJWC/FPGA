@@ -1,0 +1,31 @@
+module ROM8X2
+(
+	input A, B, C,
+	output F, G
+);
+
+reg [0:1] ROM [0:7];
+
+wire [0:1] ROM_out;
+wire [2:0] ROM_in;
+
+assign ROM_in = {A,B,C};
+assign ROM_out = ROM[ROM_in];
+assign F = ROM_out[0];
+assign G = ROM_out[1];
+
+
+
+initial 
+begin
+	ROM[0] = 2'b11;
+	ROM[1] = 2'b11;
+	ROM[2] = 2'b10;
+	ROM[3] = 2'b00;
+	ROM[4] = 2'b01;
+	ROM[5] = 2'b01;
+	ROM[6] = 2'b10;
+	ROM[7] = 2'b01;
+end
+
+endmodule 

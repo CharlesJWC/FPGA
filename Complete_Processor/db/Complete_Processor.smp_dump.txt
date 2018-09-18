@@ -1,0 +1,22 @@
+
+State Machine - |Complete_Processor|nxt_state
+Name nxt_state.S5 nxt_state.S42 nxt_state.S41 nxt_state.S32 nxt_state.S31 nxt_state.S22 nxt_state.S21 nxt_state.S1 
+nxt_state.S1 0 0 0 0 0 0 0 0 
+nxt_state.S21 0 0 0 0 0 0 1 1 
+nxt_state.S22 0 0 0 0 0 1 0 1 
+nxt_state.S31 0 0 0 0 1 0 0 1 
+nxt_state.S32 0 0 0 1 0 0 0 1 
+nxt_state.S41 0 0 1 0 0 0 0 1 
+nxt_state.S42 0 1 0 0 0 0 0 1 
+nxt_state.S5 1 0 0 0 0 0 0 1 
+
+State Machine - |Complete_Processor|state
+Name state.S5 state.S42 state.S41 state.S32 state.S31 state.S22 state.S21 state.S1 
+state.S1 0 0 0 0 0 0 0 0 
+state.S21 0 0 0 0 0 0 1 1 
+state.S22 0 0 0 0 0 1 0 1 
+state.S31 0 0 0 0 1 0 0 1 
+state.S32 0 0 0 1 0 0 0 1 
+state.S41 0 0 1 0 0 0 0 1 
+state.S42 0 1 0 0 0 0 0 1 
+state.S5 1 0 0 0 0 0 0 1 

@@ -1,0 +1,107 @@
+|Board_7segment_decoder
+sw[0] => Div0.IN19
+sw[0] => Add0.IN20
+sw[1] => Div0.IN18
+sw[1] => Add0.IN19
+sw[2] => Div0.IN17
+sw[2] => Add0.IN18
+sw[3] => Div0.IN16
+sw[3] => Add0.IN17
+sw[4] => Div0.IN15
+sw[4] => Add0.IN16
+sw[5] => Div0.IN14
+sw[5] => Add0.IN15
+sw[6] => Div0.IN13
+sw[6] => Add0.IN14
+sw[7] => Div0.IN12
+sw[7] => Add0.IN13
+sw[8] => Div0.IN11
+sw[8] => Add0.IN12
+sw[9] => Div0.IN10
+sw[9] => Add0.IN11
+segment_1000[0] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[1] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[2] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[3] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[4] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[5] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[6] <= bcd_7segment:bcd_7segment_1000.port1
+segment_100[0] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[1] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[2] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[3] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[4] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[5] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[6] <= bcd_7segment:bcd_7segment_100.port1
+segment_10[0] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[1] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[2] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[3] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[4] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[5] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[6] <= bcd_7segment:bcd_7segment_10.port1
+segment_1[0] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[1] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[2] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[3] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[4] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[5] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[6] <= bcd_7segment:bcd_7segment_1.port1
+
+
+|Board_7segment_decoder|bcd_7segment:bcd_7segment_1000
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Board_7segment_decoder|bcd_7segment:bcd_7segment_100
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Board_7segment_decoder|bcd_7segment:bcd_7segment_10
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Board_7segment_decoder|bcd_7segment:bcd_7segment_1
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

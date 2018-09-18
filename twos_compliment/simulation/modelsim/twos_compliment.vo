@@ -1,0 +1,1141 @@
+// Copyright (C) 1991-2009 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II"
+// VERSION "Version 9.1 Build 222 10/21/2009 SJ Web Edition"
+
+// DATE "10/27/2017 11:28:30"
+
+// 
+// Device: Altera EP2S15F484C3 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module twos_compliment (
+	CMC,
+	signal_in,
+	signal_out);
+input 	CMC;
+input 	[7:0] signal_in;
+output 	[7:0] signal_out;
+
+// Design Ports Information
+// signal_out[0]	=>  Location: PIN_AB8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// signal_out[1]	=>  Location: PIN_J3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 12mA
+// signal_out[2]	=>  Location: PIN_AA11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// signal_out[3]	=>  Location: PIN_AA10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// signal_out[4]	=>  Location: PIN_B10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// signal_out[5]	=>  Location: PIN_T10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// signal_out[6]	=>  Location: PIN_V9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// signal_out[7]	=>  Location: PIN_W10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+// CMC	=>  Location: PIN_AA8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// signal_in[0]	=>  Location: PIN_Y9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// signal_in[1]	=>  Location: PIN_Y14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// signal_in[2]	=>  Location: PIN_Y11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// signal_in[3]	=>  Location: PIN_W9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// signal_in[4]	=>  Location: PIN_AB10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// signal_in[5]	=>  Location: PIN_Y10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// signal_in[6]	=>  Location: PIN_AA12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// signal_in[7]	=>  Location: PIN_AA9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("twos_compliment_v.sdo");
+// synopsys translate_on
+
+wire \CMC~combout ;
+wire \Add0~2_sumout ;
+wire \Add0~3 ;
+wire \Add0~6_sumout ;
+wire \Add0~7 ;
+wire \Add0~10_sumout ;
+wire \Add0~11 ;
+wire \Add0~14_sumout ;
+wire \Add0~15 ;
+wire \Add0~18_sumout ;
+wire \Add0~19 ;
+wire \Add0~22_sumout ;
+wire \Add0~23 ;
+wire \Add0~26_sumout ;
+wire \Add0~27 ;
+wire \Add0~30_sumout ;
+wire [7:0] \signal_in~combout ;
+
+
+// Location: PIN_AA8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+stratixii_io \CMC~I (
+	.datain(gnd),
+	.ddiodatain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\CMC~combout ),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(CMC));
+// synopsys translate_off
+defparam \CMC~I .ddio_mode = "none";
+defparam \CMC~I .ddioinclk_input = "negated_inclk";
+defparam \CMC~I .dqs_delay_buffer_mode = "none";
+defparam \CMC~I .dqs_out_mode = "none";
+defparam \CMC~I .inclk_input = "normal";
+defparam \CMC~I .input_async_reset = "none";
+defparam \CMC~I .input_power_up = "low";
+defparam \CMC~I .input_register_mode = "none";
+defparam \CMC~I .input_sync_reset = "none";
+defparam \CMC~I .oe_async_reset = "none";
+defparam \CMC~I .oe_power_up = "low";
+defparam \CMC~I .oe_register_mode = "none";
+defparam \CMC~I .oe_sync_reset = "none";
+defparam \CMC~I .operation_mode = "input";
+defparam \CMC~I .output_async_reset = "none";
+defparam \CMC~I .output_power_up = "low";
+defparam \CMC~I .output_register_mode = "none";
+defparam \CMC~I .output_sync_reset = "none";
+defparam \CMC~I .sim_dqs_delay_increment = 0;
+defparam \CMC~I .sim_dqs_intrinsic_delay = 0;
+defparam \CMC~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: PIN_Y9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+stratixii_io \signal_in[0]~I (
+	.datain(gnd),
+	.ddiodatain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\signal_in~combout [0]),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_in[0]));
+// synopsys translate_off
+defparam \signal_in[0]~I .ddio_mode = "none";
+defparam \signal_in[0]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_in[0]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_in[0]~I .dqs_out_mode = "none";
+defparam \signal_in[0]~I .inclk_input = "normal";
+defparam \signal_in[0]~I .input_async_reset = "none";
+defparam \signal_in[0]~I .input_power_up = "low";
+defparam \signal_in[0]~I .input_register_mode = "none";
+defparam \signal_in[0]~I .input_sync_reset = "none";
+defparam \signal_in[0]~I .oe_async_reset = "none";
+defparam \signal_in[0]~I .oe_power_up = "low";
+defparam \signal_in[0]~I .oe_register_mode = "none";
+defparam \signal_in[0]~I .oe_sync_reset = "none";
+defparam \signal_in[0]~I .operation_mode = "input";
+defparam \signal_in[0]~I .output_async_reset = "none";
+defparam \signal_in[0]~I .output_power_up = "low";
+defparam \signal_in[0]~I .output_register_mode = "none";
+defparam \signal_in[0]~I .output_sync_reset = "none";
+defparam \signal_in[0]~I .sim_dqs_delay_increment = 0;
+defparam \signal_in[0]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_in[0]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y10_N16
+stratixii_lcell_comb \Add0~2 (
+// Equation(s):
+// \Add0~2_sumout  = SUM(( !\CMC~combout  $ (!\signal_in~combout [0]) ) + ( \CMC~combout  ) + ( !VCC ))
+// \Add0~3  = CARRY(( !\CMC~combout  $ (!\signal_in~combout [0]) ) + ( \CMC~combout  ) + ( !VCC ))
+
+	.dataa(!\CMC~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(!\signal_in~combout [0]),
+	.datae(vcc),
+	.dataf(vcc),
+	.datag(vcc),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~2_sumout ),
+	.cout(\Add0~3 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~2 .extended_lut = "off";
+defparam \Add0~2 .lut_mask = 64'h0000AAAA000055AA;
+defparam \Add0~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: PIN_Y14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+stratixii_io \signal_in[1]~I (
+	.datain(gnd),
+	.ddiodatain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\signal_in~combout [1]),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_in[1]));
+// synopsys translate_off
+defparam \signal_in[1]~I .ddio_mode = "none";
+defparam \signal_in[1]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_in[1]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_in[1]~I .dqs_out_mode = "none";
+defparam \signal_in[1]~I .inclk_input = "normal";
+defparam \signal_in[1]~I .input_async_reset = "none";
+defparam \signal_in[1]~I .input_power_up = "low";
+defparam \signal_in[1]~I .input_register_mode = "none";
+defparam \signal_in[1]~I .input_sync_reset = "none";
+defparam \signal_in[1]~I .oe_async_reset = "none";
+defparam \signal_in[1]~I .oe_power_up = "low";
+defparam \signal_in[1]~I .oe_register_mode = "none";
+defparam \signal_in[1]~I .oe_sync_reset = "none";
+defparam \signal_in[1]~I .operation_mode = "input";
+defparam \signal_in[1]~I .output_async_reset = "none";
+defparam \signal_in[1]~I .output_power_up = "low";
+defparam \signal_in[1]~I .output_register_mode = "none";
+defparam \signal_in[1]~I .output_sync_reset = "none";
+defparam \signal_in[1]~I .sim_dqs_delay_increment = 0;
+defparam \signal_in[1]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_in[1]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y10_N18
+stratixii_lcell_comb \Add0~6 (
+// Equation(s):
+// \Add0~6_sumout  = SUM(( !\CMC~combout  $ (!\signal_in~combout [1]) ) + ( GND ) + ( \Add0~3  ))
+// \Add0~7  = CARRY(( !\CMC~combout  $ (!\signal_in~combout [1]) ) + ( GND ) + ( \Add0~3  ))
+
+	.dataa(!\CMC~combout ),
+	.datab(vcc),
+	.datac(!\signal_in~combout [1]),
+	.datad(vcc),
+	.datae(vcc),
+	.dataf(vcc),
+	.datag(vcc),
+	.cin(\Add0~3 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~6_sumout ),
+	.cout(\Add0~7 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~6 .extended_lut = "off";
+defparam \Add0~6 .lut_mask = 64'h0000FFFF00005A5A;
+defparam \Add0~6 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: PIN_Y11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+stratixii_io \signal_in[2]~I (
+	.datain(gnd),
+	.ddiodatain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\signal_in~combout [2]),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_in[2]));
+// synopsys translate_off
+defparam \signal_in[2]~I .ddio_mode = "none";
+defparam \signal_in[2]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_in[2]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_in[2]~I .dqs_out_mode = "none";
+defparam \signal_in[2]~I .inclk_input = "normal";
+defparam \signal_in[2]~I .input_async_reset = "none";
+defparam \signal_in[2]~I .input_power_up = "low";
+defparam \signal_in[2]~I .input_register_mode = "none";
+defparam \signal_in[2]~I .input_sync_reset = "none";
+defparam \signal_in[2]~I .oe_async_reset = "none";
+defparam \signal_in[2]~I .oe_power_up = "low";
+defparam \signal_in[2]~I .oe_register_mode = "none";
+defparam \signal_in[2]~I .oe_sync_reset = "none";
+defparam \signal_in[2]~I .operation_mode = "input";
+defparam \signal_in[2]~I .output_async_reset = "none";
+defparam \signal_in[2]~I .output_power_up = "low";
+defparam \signal_in[2]~I .output_register_mode = "none";
+defparam \signal_in[2]~I .output_sync_reset = "none";
+defparam \signal_in[2]~I .sim_dqs_delay_increment = 0;
+defparam \signal_in[2]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_in[2]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y10_N20
+stratixii_lcell_comb \Add0~10 (
+// Equation(s):
+// \Add0~10_sumout  = SUM(( GND ) + ( !\CMC~combout  $ (!\signal_in~combout [2]) ) + ( \Add0~7  ))
+// \Add0~11  = CARRY(( GND ) + ( !\CMC~combout  $ (!\signal_in~combout [2]) ) + ( \Add0~7  ))
+
+	.dataa(!\CMC~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.datae(vcc),
+	.dataf(!\signal_in~combout [2]),
+	.datag(vcc),
+	.cin(\Add0~7 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~10_sumout ),
+	.cout(\Add0~11 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~10 .extended_lut = "off";
+defparam \Add0~10 .lut_mask = 64'h0000AA5500000000;
+defparam \Add0~10 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: PIN_W9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+stratixii_io \signal_in[3]~I (
+	.datain(gnd),
+	.ddiodatain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\signal_in~combout [3]),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_in[3]));
+// synopsys translate_off
+defparam \signal_in[3]~I .ddio_mode = "none";
+defparam \signal_in[3]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_in[3]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_in[3]~I .dqs_out_mode = "none";
+defparam \signal_in[3]~I .inclk_input = "normal";
+defparam \signal_in[3]~I .input_async_reset = "none";
+defparam \signal_in[3]~I .input_power_up = "low";
+defparam \signal_in[3]~I .input_register_mode = "none";
+defparam \signal_in[3]~I .input_sync_reset = "none";
+defparam \signal_in[3]~I .oe_async_reset = "none";
+defparam \signal_in[3]~I .oe_power_up = "low";
+defparam \signal_in[3]~I .oe_register_mode = "none";
+defparam \signal_in[3]~I .oe_sync_reset = "none";
+defparam \signal_in[3]~I .operation_mode = "input";
+defparam \signal_in[3]~I .output_async_reset = "none";
+defparam \signal_in[3]~I .output_power_up = "low";
+defparam \signal_in[3]~I .output_register_mode = "none";
+defparam \signal_in[3]~I .output_sync_reset = "none";
+defparam \signal_in[3]~I .sim_dqs_delay_increment = 0;
+defparam \signal_in[3]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_in[3]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y10_N22
+stratixii_lcell_comb \Add0~14 (
+// Equation(s):
+// \Add0~14_sumout  = SUM(( !\CMC~combout  $ (!\signal_in~combout [3]) ) + ( GND ) + ( \Add0~11  ))
+// \Add0~15  = CARRY(( !\CMC~combout  $ (!\signal_in~combout [3]) ) + ( GND ) + ( \Add0~11  ))
+
+	.dataa(!\CMC~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(!\signal_in~combout [3]),
+	.datae(vcc),
+	.dataf(vcc),
+	.datag(vcc),
+	.cin(\Add0~11 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~14_sumout ),
+	.cout(\Add0~15 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~14 .extended_lut = "off";
+defparam \Add0~14 .lut_mask = 64'h0000FFFF000055AA;
+defparam \Add0~14 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: PIN_AB10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+stratixii_io \signal_in[4]~I (
+	.datain(gnd),
+	.ddiodatain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\signal_in~combout [4]),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_in[4]));
+// synopsys translate_off
+defparam \signal_in[4]~I .ddio_mode = "none";
+defparam \signal_in[4]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_in[4]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_in[4]~I .dqs_out_mode = "none";
+defparam \signal_in[4]~I .inclk_input = "normal";
+defparam \signal_in[4]~I .input_async_reset = "none";
+defparam \signal_in[4]~I .input_power_up = "low";
+defparam \signal_in[4]~I .input_register_mode = "none";
+defparam \signal_in[4]~I .input_sync_reset = "none";
+defparam \signal_in[4]~I .oe_async_reset = "none";
+defparam \signal_in[4]~I .oe_power_up = "low";
+defparam \signal_in[4]~I .oe_register_mode = "none";
+defparam \signal_in[4]~I .oe_sync_reset = "none";
+defparam \signal_in[4]~I .operation_mode = "input";
+defparam \signal_in[4]~I .output_async_reset = "none";
+defparam \signal_in[4]~I .output_power_up = "low";
+defparam \signal_in[4]~I .output_register_mode = "none";
+defparam \signal_in[4]~I .output_sync_reset = "none";
+defparam \signal_in[4]~I .sim_dqs_delay_increment = 0;
+defparam \signal_in[4]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_in[4]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y10_N24
+stratixii_lcell_comb \Add0~18 (
+// Equation(s):
+// \Add0~18_sumout  = SUM(( !\CMC~combout  $ (!\signal_in~combout [4]) ) + ( GND ) + ( \Add0~15  ))
+// \Add0~19  = CARRY(( !\CMC~combout  $ (!\signal_in~combout [4]) ) + ( GND ) + ( \Add0~15  ))
+
+	.dataa(!\CMC~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(!\signal_in~combout [4]),
+	.datae(vcc),
+	.dataf(vcc),
+	.datag(vcc),
+	.cin(\Add0~15 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~18_sumout ),
+	.cout(\Add0~19 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~18 .extended_lut = "off";
+defparam \Add0~18 .lut_mask = 64'h0000FFFF000055AA;
+defparam \Add0~18 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: PIN_Y10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+stratixii_io \signal_in[5]~I (
+	.datain(gnd),
+	.ddiodatain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\signal_in~combout [5]),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_in[5]));
+// synopsys translate_off
+defparam \signal_in[5]~I .ddio_mode = "none";
+defparam \signal_in[5]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_in[5]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_in[5]~I .dqs_out_mode = "none";
+defparam \signal_in[5]~I .inclk_input = "normal";
+defparam \signal_in[5]~I .input_async_reset = "none";
+defparam \signal_in[5]~I .input_power_up = "low";
+defparam \signal_in[5]~I .input_register_mode = "none";
+defparam \signal_in[5]~I .input_sync_reset = "none";
+defparam \signal_in[5]~I .oe_async_reset = "none";
+defparam \signal_in[5]~I .oe_power_up = "low";
+defparam \signal_in[5]~I .oe_register_mode = "none";
+defparam \signal_in[5]~I .oe_sync_reset = "none";
+defparam \signal_in[5]~I .operation_mode = "input";
+defparam \signal_in[5]~I .output_async_reset = "none";
+defparam \signal_in[5]~I .output_power_up = "low";
+defparam \signal_in[5]~I .output_register_mode = "none";
+defparam \signal_in[5]~I .output_sync_reset = "none";
+defparam \signal_in[5]~I .sim_dqs_delay_increment = 0;
+defparam \signal_in[5]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_in[5]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y10_N26
+stratixii_lcell_comb \Add0~22 (
+// Equation(s):
+// \Add0~22_sumout  = SUM(( GND ) + ( !\CMC~combout  $ (!\signal_in~combout [5]) ) + ( \Add0~19  ))
+// \Add0~23  = CARRY(( GND ) + ( !\CMC~combout  $ (!\signal_in~combout [5]) ) + ( \Add0~19  ))
+
+	.dataa(!\CMC~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.datae(vcc),
+	.dataf(!\signal_in~combout [5]),
+	.datag(vcc),
+	.cin(\Add0~19 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~22_sumout ),
+	.cout(\Add0~23 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~22 .extended_lut = "off";
+defparam \Add0~22 .lut_mask = 64'h0000AA5500000000;
+defparam \Add0~22 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: PIN_AA12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+stratixii_io \signal_in[6]~I (
+	.datain(gnd),
+	.ddiodatain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\signal_in~combout [6]),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_in[6]));
+// synopsys translate_off
+defparam \signal_in[6]~I .ddio_mode = "none";
+defparam \signal_in[6]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_in[6]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_in[6]~I .dqs_out_mode = "none";
+defparam \signal_in[6]~I .inclk_input = "normal";
+defparam \signal_in[6]~I .input_async_reset = "none";
+defparam \signal_in[6]~I .input_power_up = "low";
+defparam \signal_in[6]~I .input_register_mode = "none";
+defparam \signal_in[6]~I .input_sync_reset = "none";
+defparam \signal_in[6]~I .oe_async_reset = "none";
+defparam \signal_in[6]~I .oe_power_up = "low";
+defparam \signal_in[6]~I .oe_register_mode = "none";
+defparam \signal_in[6]~I .oe_sync_reset = "none";
+defparam \signal_in[6]~I .operation_mode = "input";
+defparam \signal_in[6]~I .output_async_reset = "none";
+defparam \signal_in[6]~I .output_power_up = "low";
+defparam \signal_in[6]~I .output_register_mode = "none";
+defparam \signal_in[6]~I .output_sync_reset = "none";
+defparam \signal_in[6]~I .sim_dqs_delay_increment = 0;
+defparam \signal_in[6]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_in[6]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y10_N28
+stratixii_lcell_comb \Add0~26 (
+// Equation(s):
+// \Add0~26_sumout  = SUM(( !\CMC~combout  $ (!\signal_in~combout [6]) ) + ( GND ) + ( \Add0~23  ))
+// \Add0~27  = CARRY(( !\CMC~combout  $ (!\signal_in~combout [6]) ) + ( GND ) + ( \Add0~23  ))
+
+	.dataa(!\CMC~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(!\signal_in~combout [6]),
+	.datae(vcc),
+	.dataf(vcc),
+	.datag(vcc),
+	.cin(\Add0~23 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~26_sumout ),
+	.cout(\Add0~27 ),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~26 .extended_lut = "off";
+defparam \Add0~26 .lut_mask = 64'h0000FFFF000055AA;
+defparam \Add0~26 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: PIN_AA9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+stratixii_io \signal_in[7]~I (
+	.datain(gnd),
+	.ddiodatain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\signal_in~combout [7]),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_in[7]));
+// synopsys translate_off
+defparam \signal_in[7]~I .ddio_mode = "none";
+defparam \signal_in[7]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_in[7]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_in[7]~I .dqs_out_mode = "none";
+defparam \signal_in[7]~I .inclk_input = "normal";
+defparam \signal_in[7]~I .input_async_reset = "none";
+defparam \signal_in[7]~I .input_power_up = "low";
+defparam \signal_in[7]~I .input_register_mode = "none";
+defparam \signal_in[7]~I .input_sync_reset = "none";
+defparam \signal_in[7]~I .oe_async_reset = "none";
+defparam \signal_in[7]~I .oe_power_up = "low";
+defparam \signal_in[7]~I .oe_register_mode = "none";
+defparam \signal_in[7]~I .oe_sync_reset = "none";
+defparam \signal_in[7]~I .operation_mode = "input";
+defparam \signal_in[7]~I .output_async_reset = "none";
+defparam \signal_in[7]~I .output_power_up = "low";
+defparam \signal_in[7]~I .output_register_mode = "none";
+defparam \signal_in[7]~I .output_sync_reset = "none";
+defparam \signal_in[7]~I .sim_dqs_delay_increment = 0;
+defparam \signal_in[7]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_in[7]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y10_N30
+stratixii_lcell_comb \Add0~30 (
+// Equation(s):
+// \Add0~30_sumout  = SUM(( !\CMC~combout  $ (!\signal_in~combout [7]) ) + ( GND ) + ( \Add0~27  ))
+
+	.dataa(!\CMC~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(!\signal_in~combout [7]),
+	.datae(vcc),
+	.dataf(vcc),
+	.datag(vcc),
+	.cin(\Add0~27 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\Add0~30_sumout ),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add0~30 .extended_lut = "off";
+defparam \Add0~30 .lut_mask = 64'h0000FFFF000055AA;
+defparam \Add0~30 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: PIN_AB8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+stratixii_io \signal_out[0]~I (
+	.datain(\Add0~2_sumout ),
+	.ddiodatain(gnd),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_out[0]));
+// synopsys translate_off
+defparam \signal_out[0]~I .ddio_mode = "none";
+defparam \signal_out[0]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_out[0]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_out[0]~I .dqs_out_mode = "none";
+defparam \signal_out[0]~I .inclk_input = "normal";
+defparam \signal_out[0]~I .input_async_reset = "none";
+defparam \signal_out[0]~I .input_power_up = "low";
+defparam \signal_out[0]~I .input_register_mode = "none";
+defparam \signal_out[0]~I .input_sync_reset = "none";
+defparam \signal_out[0]~I .oe_async_reset = "none";
+defparam \signal_out[0]~I .oe_power_up = "low";
+defparam \signal_out[0]~I .oe_register_mode = "none";
+defparam \signal_out[0]~I .oe_sync_reset = "none";
+defparam \signal_out[0]~I .operation_mode = "output";
+defparam \signal_out[0]~I .output_async_reset = "none";
+defparam \signal_out[0]~I .output_power_up = "low";
+defparam \signal_out[0]~I .output_register_mode = "none";
+defparam \signal_out[0]~I .output_sync_reset = "none";
+defparam \signal_out[0]~I .sim_dqs_delay_increment = 0;
+defparam \signal_out[0]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_out[0]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: PIN_J3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 12mA
+stratixii_io \signal_out[1]~I (
+	.datain(\Add0~6_sumout ),
+	.ddiodatain(gnd),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_out[1]));
+// synopsys translate_off
+defparam \signal_out[1]~I .ddio_mode = "none";
+defparam \signal_out[1]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_out[1]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_out[1]~I .dqs_out_mode = "none";
+defparam \signal_out[1]~I .inclk_input = "normal";
+defparam \signal_out[1]~I .input_async_reset = "none";
+defparam \signal_out[1]~I .input_power_up = "low";
+defparam \signal_out[1]~I .input_register_mode = "none";
+defparam \signal_out[1]~I .input_sync_reset = "none";
+defparam \signal_out[1]~I .oe_async_reset = "none";
+defparam \signal_out[1]~I .oe_power_up = "low";
+defparam \signal_out[1]~I .oe_register_mode = "none";
+defparam \signal_out[1]~I .oe_sync_reset = "none";
+defparam \signal_out[1]~I .operation_mode = "output";
+defparam \signal_out[1]~I .output_async_reset = "none";
+defparam \signal_out[1]~I .output_power_up = "low";
+defparam \signal_out[1]~I .output_register_mode = "none";
+defparam \signal_out[1]~I .output_sync_reset = "none";
+defparam \signal_out[1]~I .sim_dqs_delay_increment = 0;
+defparam \signal_out[1]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_out[1]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: PIN_AA11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+stratixii_io \signal_out[2]~I (
+	.datain(\Add0~10_sumout ),
+	.ddiodatain(gnd),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_out[2]));
+// synopsys translate_off
+defparam \signal_out[2]~I .ddio_mode = "none";
+defparam \signal_out[2]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_out[2]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_out[2]~I .dqs_out_mode = "none";
+defparam \signal_out[2]~I .inclk_input = "normal";
+defparam \signal_out[2]~I .input_async_reset = "none";
+defparam \signal_out[2]~I .input_power_up = "low";
+defparam \signal_out[2]~I .input_register_mode = "none";
+defparam \signal_out[2]~I .input_sync_reset = "none";
+defparam \signal_out[2]~I .oe_async_reset = "none";
+defparam \signal_out[2]~I .oe_power_up = "low";
+defparam \signal_out[2]~I .oe_register_mode = "none";
+defparam \signal_out[2]~I .oe_sync_reset = "none";
+defparam \signal_out[2]~I .operation_mode = "output";
+defparam \signal_out[2]~I .output_async_reset = "none";
+defparam \signal_out[2]~I .output_power_up = "low";
+defparam \signal_out[2]~I .output_register_mode = "none";
+defparam \signal_out[2]~I .output_sync_reset = "none";
+defparam \signal_out[2]~I .sim_dqs_delay_increment = 0;
+defparam \signal_out[2]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_out[2]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: PIN_AA10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+stratixii_io \signal_out[3]~I (
+	.datain(\Add0~14_sumout ),
+	.ddiodatain(gnd),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_out[3]));
+// synopsys translate_off
+defparam \signal_out[3]~I .ddio_mode = "none";
+defparam \signal_out[3]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_out[3]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_out[3]~I .dqs_out_mode = "none";
+defparam \signal_out[3]~I .inclk_input = "normal";
+defparam \signal_out[3]~I .input_async_reset = "none";
+defparam \signal_out[3]~I .input_power_up = "low";
+defparam \signal_out[3]~I .input_register_mode = "none";
+defparam \signal_out[3]~I .input_sync_reset = "none";
+defparam \signal_out[3]~I .oe_async_reset = "none";
+defparam \signal_out[3]~I .oe_power_up = "low";
+defparam \signal_out[3]~I .oe_register_mode = "none";
+defparam \signal_out[3]~I .oe_sync_reset = "none";
+defparam \signal_out[3]~I .operation_mode = "output";
+defparam \signal_out[3]~I .output_async_reset = "none";
+defparam \signal_out[3]~I .output_power_up = "low";
+defparam \signal_out[3]~I .output_register_mode = "none";
+defparam \signal_out[3]~I .output_sync_reset = "none";
+defparam \signal_out[3]~I .sim_dqs_delay_increment = 0;
+defparam \signal_out[3]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_out[3]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: PIN_B10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+stratixii_io \signal_out[4]~I (
+	.datain(\Add0~18_sumout ),
+	.ddiodatain(gnd),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_out[4]));
+// synopsys translate_off
+defparam \signal_out[4]~I .ddio_mode = "none";
+defparam \signal_out[4]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_out[4]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_out[4]~I .dqs_out_mode = "none";
+defparam \signal_out[4]~I .inclk_input = "normal";
+defparam \signal_out[4]~I .input_async_reset = "none";
+defparam \signal_out[4]~I .input_power_up = "low";
+defparam \signal_out[4]~I .input_register_mode = "none";
+defparam \signal_out[4]~I .input_sync_reset = "none";
+defparam \signal_out[4]~I .oe_async_reset = "none";
+defparam \signal_out[4]~I .oe_power_up = "low";
+defparam \signal_out[4]~I .oe_register_mode = "none";
+defparam \signal_out[4]~I .oe_sync_reset = "none";
+defparam \signal_out[4]~I .operation_mode = "output";
+defparam \signal_out[4]~I .output_async_reset = "none";
+defparam \signal_out[4]~I .output_power_up = "low";
+defparam \signal_out[4]~I .output_register_mode = "none";
+defparam \signal_out[4]~I .output_sync_reset = "none";
+defparam \signal_out[4]~I .sim_dqs_delay_increment = 0;
+defparam \signal_out[4]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_out[4]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: PIN_T10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+stratixii_io \signal_out[5]~I (
+	.datain(\Add0~22_sumout ),
+	.ddiodatain(gnd),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_out[5]));
+// synopsys translate_off
+defparam \signal_out[5]~I .ddio_mode = "none";
+defparam \signal_out[5]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_out[5]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_out[5]~I .dqs_out_mode = "none";
+defparam \signal_out[5]~I .inclk_input = "normal";
+defparam \signal_out[5]~I .input_async_reset = "none";
+defparam \signal_out[5]~I .input_power_up = "low";
+defparam \signal_out[5]~I .input_register_mode = "none";
+defparam \signal_out[5]~I .input_sync_reset = "none";
+defparam \signal_out[5]~I .oe_async_reset = "none";
+defparam \signal_out[5]~I .oe_power_up = "low";
+defparam \signal_out[5]~I .oe_register_mode = "none";
+defparam \signal_out[5]~I .oe_sync_reset = "none";
+defparam \signal_out[5]~I .operation_mode = "output";
+defparam \signal_out[5]~I .output_async_reset = "none";
+defparam \signal_out[5]~I .output_power_up = "low";
+defparam \signal_out[5]~I .output_register_mode = "none";
+defparam \signal_out[5]~I .output_sync_reset = "none";
+defparam \signal_out[5]~I .sim_dqs_delay_increment = 0;
+defparam \signal_out[5]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_out[5]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: PIN_V9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+stratixii_io \signal_out[6]~I (
+	.datain(\Add0~26_sumout ),
+	.ddiodatain(gnd),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_out[6]));
+// synopsys translate_off
+defparam \signal_out[6]~I .ddio_mode = "none";
+defparam \signal_out[6]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_out[6]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_out[6]~I .dqs_out_mode = "none";
+defparam \signal_out[6]~I .inclk_input = "normal";
+defparam \signal_out[6]~I .input_async_reset = "none";
+defparam \signal_out[6]~I .input_power_up = "low";
+defparam \signal_out[6]~I .input_register_mode = "none";
+defparam \signal_out[6]~I .input_sync_reset = "none";
+defparam \signal_out[6]~I .oe_async_reset = "none";
+defparam \signal_out[6]~I .oe_power_up = "low";
+defparam \signal_out[6]~I .oe_register_mode = "none";
+defparam \signal_out[6]~I .oe_sync_reset = "none";
+defparam \signal_out[6]~I .operation_mode = "output";
+defparam \signal_out[6]~I .output_async_reset = "none";
+defparam \signal_out[6]~I .output_power_up = "low";
+defparam \signal_out[6]~I .output_register_mode = "none";
+defparam \signal_out[6]~I .output_sync_reset = "none";
+defparam \signal_out[6]~I .sim_dqs_delay_increment = 0;
+defparam \signal_out[6]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_out[6]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+// Location: PIN_W10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+stratixii_io \signal_out[7]~I (
+	.datain(\Add0~30_sumout ),
+	.ddiodatain(gnd),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.ddioinclk(gnd),
+	.dqsupdateen(vcc),
+	.linkin(gnd),
+	.delayctrlin(6'b000000),
+	.offsetctrlin(6'b000000),
+	.terminationcontrol(14'b00000000000000),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.ddioregout(),
+	.dqsbusout(),
+	.linkout(),
+	.padio(signal_out[7]));
+// synopsys translate_off
+defparam \signal_out[7]~I .ddio_mode = "none";
+defparam \signal_out[7]~I .ddioinclk_input = "negated_inclk";
+defparam \signal_out[7]~I .dqs_delay_buffer_mode = "none";
+defparam \signal_out[7]~I .dqs_out_mode = "none";
+defparam \signal_out[7]~I .inclk_input = "normal";
+defparam \signal_out[7]~I .input_async_reset = "none";
+defparam \signal_out[7]~I .input_power_up = "low";
+defparam \signal_out[7]~I .input_register_mode = "none";
+defparam \signal_out[7]~I .input_sync_reset = "none";
+defparam \signal_out[7]~I .oe_async_reset = "none";
+defparam \signal_out[7]~I .oe_power_up = "low";
+defparam \signal_out[7]~I .oe_register_mode = "none";
+defparam \signal_out[7]~I .oe_sync_reset = "none";
+defparam \signal_out[7]~I .operation_mode = "output";
+defparam \signal_out[7]~I .output_async_reset = "none";
+defparam \signal_out[7]~I .output_power_up = "low";
+defparam \signal_out[7]~I .output_register_mode = "none";
+defparam \signal_out[7]~I .output_sync_reset = "none";
+defparam \signal_out[7]~I .sim_dqs_delay_increment = 0;
+defparam \signal_out[7]~I .sim_dqs_intrinsic_delay = 0;
+defparam \signal_out[7]~I .sim_dqs_offset_increment = 0;
+// synopsys translate_on
+
+endmodule

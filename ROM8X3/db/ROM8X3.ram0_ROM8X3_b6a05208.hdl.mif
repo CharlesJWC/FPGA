@@ -1,0 +1,19 @@
+-- begin_signature
+-- ROM8X3
+-- end_signature
+WIDTH=3;
+DEPTH=8;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	7 :	000;
+	6 :	000;
+	5 :	010;
+	4 :	001;
+	3 :	001;
+	2 :	101;
+	1 :	101;
+	0 :	010;
+END;

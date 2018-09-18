@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/mux_4x1/mux_4x1.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/mux_4x1/tb_mux_4x1.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/mux_4x1/db/mux_4x1.cbx.xml
+design_name = mux_4x1
+instance = comp, \in0~I , in0, mux_4x1, 1
+instance = comp, \in3~I , in3, mux_4x1, 1
+instance = comp, \select[1]~I , select[1], mux_4x1, 1
+instance = comp, \in2~I , in2, mux_4x1, 1
+instance = comp, \select[0]~I , select[0], mux_4x1, 1
+instance = comp, \in1~I , in1, mux_4x1, 1
+instance = comp, \out~0 , out~0, mux_4x1, 1
+instance = comp, \out~1 , out~1, mux_4x1, 1
+instance = comp, \out~I , out, mux_4x1, 1

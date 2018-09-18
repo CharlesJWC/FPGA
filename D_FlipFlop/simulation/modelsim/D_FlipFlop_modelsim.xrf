@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/D_FlipFlop.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/tb_D_FlipFlop.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/db/D_FlipFlop.cbx.xml
+design_name = D_FlipFlop
+instance = comp, \clk~I , clk, D_FlipFlop, 1
+instance = comp, \D~I , D, D_FlipFlop, 1
+instance = comp, \Q~reg0feeder , Q~reg0feeder, D_FlipFlop, 1
+instance = comp, \rst~I , rst, D_FlipFlop, 1
+instance = comp, \Q~reg0 , Q~reg0, D_FlipFlop, 1
+instance = comp, \Q~I , Q, D_FlipFlop, 1
+instance = comp, \Qbar~I , Qbar, D_FlipFlop, 1

@@ -1,0 +1,79 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/simulation/modelsim
+vfullAdder
+!s110 1505256066
+!i10b 1
+!s100 oV[oW^nT>5Beio53Z]iFA3
+IjXDJmHdJfOJT7H[GQC?@J3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1504664689
+8D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/fullAdder.v
+FD:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/fullAdder.v
+L0 1
+Z2 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z3 !s108 1505256066.000000
+!s107 D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/fullAdder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits|D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/fullAdder.v|
+!s101 -O0
+!i113 1
+Z4 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+Z5 !s92 -vlog01compat -work work +incdir+D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+nfull@adder
+vfullAdder_4bits
+Z6 !s110 1505256067
+!i10b 1
+!s100 _K<^_T>_FgARZ0@X0ANJY2
+I@>;>cSfH2SPgJ>XGhMAcF0
+R1
+R0
+w1504667362
+8D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/fullAdder_4bits.v
+FD:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/fullAdder_4bits.v
+L0 1
+R2
+r1
+!s85 0
+31
+R3
+!s107 D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/fullAdder_4bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits|D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/fullAdder_4bits.v|
+!s101 -O0
+!i113 1
+R4
+R5
+nfull@adder_4bits
+vtb_fullAdder_4bits
+R6
+!i10b 1
+!s100 18K2eVa@A1k?V1mfN;<2S0
+IB4?V89]3<hBiSG@<:j2dS3
+R1
+R0
+w1505256016
+8D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/tb_fullAdder_4bits.v
+FD:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/tb_fullAdder_4bits.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1505256067.000000
+!s107 D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/tb_fullAdder_4bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits|D:/Workspace/Altera_Quartus_Workspace/fullAdder_4bits/tb_fullAdder_4bits.v|
+!s101 -O0
+!i113 1
+R4
+R5
+ntb_full@adder_4bits

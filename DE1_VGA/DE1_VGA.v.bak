@@ -1,0 +1,287 @@
+module DE1_VGA
+(
+input clk50m, 
+input rst_pll, 
+input rst, 
+input lr_div, ud_div, 
+
+input b_left, b_right,
+input g_up, g_down, 
+
+output vga_pixel_clk, 
+output vga_blank,
+output reg vga_hs, vga_vs, 
+output reg [9:0] vga_r, vga_g, vga_b
+);
+
+wire clk40m;
+reg blank_vs, blank_hs;
+reg [10:0] hs_count;
+reg [9:0] vs_count;
+
+//	Horizontal Parameter	( Pixel )
+parameter	H_SYNC_PULSE	=	128;
+parameter	H_SYNC_BACK		=	H_SYNC_PULSE + 88;
+parameter	H_SYNC_ACTIVE	=	H_SYNC_BACK + 800;	
+parameter	H_SYNC_FRONT	=	H_SYNC_ACTIVE + 40;
+parameter	H_SYNC_TOTAL	=	1056;
+
+//	Virtical Parameter		( Line )
+parameter	V_SYNC_PULSE	=	4;
+parameter	V_SYNC_BACK		=	V_SYNC_PULSE + 23;
+parameter	V_SYNC_ACTIVE	=	V_SYNC_BACK + 600;	
+parameter	V_SYNC_FRONT	=	V_SYNC_ACTIVE + 1;
+parameter	V_SYNC_TOTAL	=	628;
+
+
+parameter	H_MIN	= 216;	
+parameter	H_MID	= 620;	
+parameter	H_MAX	= 816;
+
+parameter	G_MIN	= 27;	
+parameter	G_MID	= 326;	
+parameter	G_MAX	= 427;	
+
+
+reg [10:0] current_blue_l;
+reg [9:0] current_green_l;
+reg [10:0] nxt_current_blue_l;
+reg [9:0] nxt_current_green_l;
+wire green_light;
+wire blue_light;
+ 
+
+initial 
+begin
+	current_blue_l = H_MIN;
+	current_green_l = G_MIN;
+	nxt_current_blue_l = H_MIN;
+	nxt_current_green_l = G_MIN;
+end
+
+
+always @(negedge b_right)
+begin
+	if(nxt_current_blue_l < H_MAX)
+	begin
+		nxt_current_blue_l = nxt_current_blue_l + 11'd10;
+	end
+	else nxt_current_blue_l = H_MAX; 
+end
+
+always @(negedge g_down)
+begin
+	if(nxt_current_green_l < G_MAX)
+	begin
+		nxt_current_green_l <= (nxt_current_green_l + 10'd10);
+	end
+	else nxt_current_green_l <= G_MAX; 
+end
+
+assign blue_light = (hs_count > current_blue_l & hs_count < (current_blue_l + 11'd200)) ? 1 : 0;
+assign green_light = (vs_count > current_green_l & vs_count < (current_green_l + 10'd200)) ? 1 : 0;
+
+assign vga_pixel_clk = clk40m;
+assign vga_blank = vga_hs & vga_vs;
+
+
+always @(negedge b_left)
+begin
+
+	if(nxt_current_blue_l > H_MIN)
+	begin
+		nxt_current_blue_l = nxt_current_blue_l - 11'd10;
+	end
+	else nxt_current_blue_l = H_MIN; 
+end
+
+
+
+always @(negedge g_up)
+begin
+
+	if(nxt_current_green_l > 10'd27)
+	begin
+		nxt_current_green_l <= (nxt_current_green_l - 10'd10);
+	end
+	else nxt_current_green_l <= 10'd27; 
+
+end
+
+
+
+pixel_clock_gen pcg0
+(
+   .areset(!rst_pll),
+   .inclk0(clk50m),
+   .c0(clk40m),
+   .locked()
+);
+
+
+always @(nxt_current_green_l or nxt_current_blue_l)
+begin
+	current_green_l = nxt_current_green_l;
+	current_blue_l = nxt_current_blue_l;
+end
+
+always@(posedge clk40m or negedge rst)
+begin
+	
+   if(!rst)
+   begin
+      hs_count = 0;
+      vga_hs = 0;
+      blank_hs = 1;
+   end
+   
+   else
+   begin
+      hs_count = hs_count + 11'd1;
+      
+      if(hs_count == H_SYNC_PULSE-1)
+      begin
+         vga_hs = 1;
+         blank_hs = 1;
+      end
+      else if(hs_count == H_SYNC_BACK-1)
+      begin
+         vga_hs = 1;
+         blank_hs = 0;
+      end
+      
+      else if(hs_count == H_SYNC_ACTIVE-1)
+      begin
+         vga_hs = 1;
+         blank_hs = 1;
+      end
+      
+      else if(hs_count == H_SYNC_TOTAL-1)
+      begin
+         vga_hs = 0;
+         blank_hs = 1;
+         hs_count = 0;
+      end
+      
+      
+      
+      if(blank_hs||blank_vs)
+      begin
+         vga_r = 0;
+         vga_g = 0;
+         vga_b = 0;
+      end
+      
+      else 
+      begin
+		
+		
+         vga_r = 0;
+         vga_g = 0;
+         vga_b = 0;
+         
+         if(lr_div)
+         begin
+            if(blue_light)// hs_count > 11'd620)
+            begin            
+               vga_b = 255;
+            end
+         end
+         
+         if(ud_div)
+         begin
+            if(green_light)//vs_count > 10'd326)
+            begin
+               vga_g = 255;
+            end
+         end
+         
+         if(!ud_div & !lr_div)
+         begin   
+            vga_r = 255;
+            vga_g = 255;
+            vga_b = 255;
+         end
+         
+         
+   /*      
+         if(lr_div)
+         begin
+            if(hs_count > 11'd620)
+            begin            
+               vga_r = 0;
+               vga_g = 0;
+               vga_b = 255;
+            end
+            else
+            begin
+               vga_r = 255;
+               vga_g = 255;
+               vga_b = 255;
+            end
+            
+         end
+         
+         else if(ud_div)
+         begin
+            if(vs_count > 10'd326)
+            begin
+               vga_r = 0;
+               vga_g = 255;
+               vga_b = 0;
+            end
+            else
+            begin
+               vga_r = 255;
+               vga_g = 255;
+               vga_b = 255;
+            end
+         end
+     */    
+         else
+         begin   
+            vga_r = 255;
+            vga_g = 255;
+            vga_b = 255;
+         end
+         
+      end
+   end
+end
+
+always@(posedge vga_hs or negedge rst)
+begin
+   if(!rst)
+   begin
+      vs_count = 0;
+      vga_vs = 0;
+      blank_vs = 1;
+   end
+   else 
+   begin
+      vs_count = vs_count + 10'd1;
+      
+      if(vs_count == V_SYNC_PULSE-1)
+      begin
+         vga_vs = 1;
+         blank_vs = 1;
+      end
+      if(vs_count == V_SYNC_BACK-1)
+      begin
+         vga_vs = 1;
+         blank_vs = 0;
+      end
+      if(vs_count == V_SYNC_ACTIVE-1)
+      begin
+         vga_vs = 1;
+         blank_vs = 1;
+      end
+      if(vs_count == V_SYNC_TOTAL-1)
+      begin
+         vga_vs = 0;
+         blank_vs = 1;
+         vs_count = 0;
+      end
+   end
+end
+endmodule

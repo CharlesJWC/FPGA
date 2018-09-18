@@ -1,0 +1,157 @@
+|DE1_Segment_Timer
+clk_50M => clk_50M.IN1
+rst => rst_bar.IN1
+segment_1000[0] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[1] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[2] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[3] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[4] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[5] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[6] <= bcd_7segment:bcd_7segment_1000.port1
+segment_100[0] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[1] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[2] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[3] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[4] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[5] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[6] <= bcd_7segment:bcd_7segment_100.port1
+segment_10[0] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[1] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[2] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[3] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[4] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[5] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[6] <= bcd_7segment:bcd_7segment_10.port1
+segment_1[0] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[1] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[2] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[3] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[4] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[5] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[6] <= bcd_7segment:bcd_7segment_1.port1
+
+
+|DE1_Segment_Timer|my_clock_gen:clock_gen
+areset => areset.IN1
+inclk0 => sub_wire4[0].IN1
+c0 <= altpll:altpll_component.clk
+locked <= altpll:altpll_component.locked
+
+
+|DE1_Segment_Timer|my_clock_gen:clock_gen|altpll:altpll_component
+inclk[0] => pll.CLK
+inclk[1] => ~NO_FANOUT~
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => pll.ARESET
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= <GND>
+clk[2] <= <GND>
+clk[3] <= <GND>
+clk[4] <= <GND>
+clk[5] <= <GND>
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= pll.LOCKED
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= sclkout1.DB_MAX_OUTPUT_PORT_TYPE
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|DE1_Segment_Timer|bcd_7segment:bcd_7segment_1000
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_Segment_Timer|bcd_7segment:bcd_7segment_100
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_Segment_Timer|bcd_7segment:bcd_7segment_10
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE1_Segment_Timer|bcd_7segment:bcd_7segment_1
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/simulation/modelsim
+vD_FlipFlop
+!s110 1506452198
+!i10b 1
+!s100 PU>8BJ^cQT2al3odd8A?Z2
+IbndXkE`]2QGYY[2?QF9391
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1506452154
+8D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/D_FlipFlop.v
+FD:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/D_FlipFlop.v
+L0 1
+Z2 OP;L;10.4a;61
+r1
+!s85 0
+31
+!s108 1506452198.000000
+!s107 D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/D_FlipFlop.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop|D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/D_FlipFlop.v|
+!s101 -O0
+!i113 1
+Z3 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+n@d_@flip@flop
+vtb_D_FlipFlop
+!s110 1506452199
+!i10b 1
+!s100 >[kj6;mo1;^Qik>3WPj8`1
+Io<`E]8?LRR>CCHk=gmB020
+R1
+R0
+w1506420782
+8D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/tb_D_FlipFlop.v
+FD:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/tb_D_FlipFlop.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1506452199.000000
+!s107 D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/tb_D_FlipFlop.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop|D:/Workspace/Altera_Quartus_Workspace/D_FlipFlop/tb_D_FlipFlop.v|
+!s101 -O0
+!i113 1
+R3
+R4
+ntb_@d_@flip@flop

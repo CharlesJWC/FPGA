@@ -1,0 +1,77 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/simulation/modelsim
+vD_FlipFlop
+Z1 !s110 1506450329
+!i10b 1
+!s100 ISek_LF]h]0:zz<m85E0a3
+I4Ha_N8GX50AF3Fi?a:nOX1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1506421017
+8D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/D_FlipFlop.v
+FD:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/D_FlipFlop.v
+L0 1
+Z3 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z4 !s108 1506450329.000000
+!s107 D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/D_FlipFlop.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial|D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/D_FlipFlop.v|
+!s101 -O0
+!i113 1
+Z5 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+Z6 !s92 -vlog01compat -work work +incdir+D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+n@d_@flip@flop
+vshift_register_4bits_serial
+R1
+!i10b 1
+!s100 3h<`o@gng><IW>HYA]i;l1
+Iejam;PQ;:z3oe3[@VnZ]53
+R2
+R0
+w1506449568
+8D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/shift_register_4bits_serial.v
+FD:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/shift_register_4bits_serial.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/shift_register_4bits_serial.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial|D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/shift_register_4bits_serial.v|
+!s101 -O0
+!i113 1
+R5
+R6
+vtb_shift_register_4bits_serial
+R1
+!i10b 1
+!s100 :Zn[9d3h1mmLSaIIikR<`3
+IM<6h=?Ui?^X7Zljb`4Zk92
+R2
+R0
+w1506450234
+8D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/tb_shift_register_4bits_serial.v
+FD:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/tb_shift_register_4bits_serial.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/tb_shift_register_4bits_serial.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial|D:/Workspace/Altera_Quartus_Workspace/shift_register_4bits_serial/tb_shift_register_4bits_serial.v|
+!s101 -O0
+!i113 1
+R5
+R6

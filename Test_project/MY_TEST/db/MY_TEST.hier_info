@@ -1,0 +1,10 @@
+|MY_TEST
+clk => set.CLK
+outlet[0] <= <VCC>
+outlet[1] <= <GND>
+outlet[2] <= <GND>
+outlet[3] <= <GND>
+outlet[4] <= set.DB_MAX_OUTPUT_PORT_TYPE
+outlet[5] <= set.DB_MAX_OUTPUT_PORT_TYPE
+
+

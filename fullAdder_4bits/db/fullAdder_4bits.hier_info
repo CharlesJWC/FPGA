@@ -1,0 +1,61 @@
+|fullAdder_4bits
+sum[0] <= fullAdder:fa0.port0
+sum[1] <= fullAdder:fa1.port0
+sum[2] <= fullAdder:fa2.port0
+sum[3] <= fullAdder:fa3.port0
+c_out <= fullAdder:fa3.port1
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+c_in => c_in.IN1
+
+
+|fullAdder_4bits|fullAdder:fa0
+sum <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => s1.IN0
+a => c1.IN0
+b => s1.IN1
+b => c1.IN1
+c_in => comb.IN1
+c_in => s2.IN1
+
+
+|fullAdder_4bits|fullAdder:fa1
+sum <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => s1.IN0
+a => c1.IN0
+b => s1.IN1
+b => c1.IN1
+c_in => comb.IN1
+c_in => s2.IN1
+
+
+|fullAdder_4bits|fullAdder:fa2
+sum <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => s1.IN0
+a => c1.IN0
+b => s1.IN1
+b => c1.IN1
+c_in => comb.IN1
+c_in => s2.IN1
+
+
+|fullAdder_4bits|fullAdder:fa3
+sum <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => s1.IN0
+a => c1.IN0
+b => s1.IN1
+b => c1.IN1
+c_in => comb.IN1
+c_in => s2.IN1
+
+

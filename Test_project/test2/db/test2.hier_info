@@ -1,0 +1,162 @@
+|test2
+clk_50M => state~1.DATAIN
+rst_bar => state~3.DATAIN
+enter_bar => nxt_state.S0.DATAB
+enter_bar => nxt_state.S1.DATAA
+enter_bar => nxt_state.S1.DATAB
+enter_bar => nxt_state.S0.DATAA
+sw[0] => sw[0].IN1
+sw[1] => sw[1].IN1
+sw[2] => sw[2].IN1
+sw[3] => sw[3].IN1
+sw[4] => sw[4].IN1
+sw[5] => sw[5].IN1
+sw[6] => sw[6].IN1
+sw[7] => sw[7].IN1
+sw[8] => sw[8].IN1
+sw[9] => sw[9].IN1
+seg_1000[0] <= Board_7segment_decoder:MJ_7Segment.port1
+seg_1000[1] <= Board_7segment_decoder:MJ_7Segment.port1
+seg_1000[2] <= Board_7segment_decoder:MJ_7Segment.port1
+seg_1000[3] <= Board_7segment_decoder:MJ_7Segment.port1
+seg_1000[4] <= Board_7segment_decoder:MJ_7Segment.port1
+seg_1000[5] <= Board_7segment_decoder:MJ_7Segment.port1
+seg_1000[6] <= Board_7segment_decoder:MJ_7Segment.port1
+seg_100[0] <= Board_7segment_decoder:MJ_7Segment.port2
+seg_100[1] <= Board_7segment_decoder:MJ_7Segment.port2
+seg_100[2] <= Board_7segment_decoder:MJ_7Segment.port2
+seg_100[3] <= Board_7segment_decoder:MJ_7Segment.port2
+seg_100[4] <= Board_7segment_decoder:MJ_7Segment.port2
+seg_100[5] <= Board_7segment_decoder:MJ_7Segment.port2
+seg_100[6] <= Board_7segment_decoder:MJ_7Segment.port2
+seg_10[0] <= Board_7segment_decoder:MJ_7Segment.port3
+seg_10[1] <= Board_7segment_decoder:MJ_7Segment.port3
+seg_10[2] <= Board_7segment_decoder:MJ_7Segment.port3
+seg_10[3] <= Board_7segment_decoder:MJ_7Segment.port3
+seg_10[4] <= Board_7segment_decoder:MJ_7Segment.port3
+seg_10[5] <= Board_7segment_decoder:MJ_7Segment.port3
+seg_10[6] <= Board_7segment_decoder:MJ_7Segment.port3
+seg_1[0] <= Board_7segment_decoder:MJ_7Segment.port4
+seg_1[1] <= Board_7segment_decoder:MJ_7Segment.port4
+seg_1[2] <= Board_7segment_decoder:MJ_7Segment.port4
+seg_1[3] <= Board_7segment_decoder:MJ_7Segment.port4
+seg_1[4] <= Board_7segment_decoder:MJ_7Segment.port4
+seg_1[5] <= Board_7segment_decoder:MJ_7Segment.port4
+seg_1[6] <= Board_7segment_decoder:MJ_7Segment.port4
+LEDG[0] <= LEDG[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[1] <= LEDG[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[2] <= LEDG[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[3] <= LEDG[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[4] <= LEDG[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[5] <= LEDG[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[6] <= LEDG[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[7] <= LEDG[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test2|Board_7segment_decoder:MJ_7Segment
+sw[0] => Div0.IN19
+sw[0] => Add0.IN20
+sw[1] => Div0.IN18
+sw[1] => Add0.IN19
+sw[2] => Div0.IN17
+sw[2] => Add0.IN18
+sw[3] => Div0.IN16
+sw[3] => Add0.IN17
+sw[4] => Div0.IN15
+sw[4] => Add0.IN16
+sw[5] => Div0.IN14
+sw[5] => Add0.IN15
+sw[6] => Div0.IN13
+sw[6] => Add0.IN14
+sw[7] => Div0.IN12
+sw[7] => Add0.IN13
+sw[8] => Div0.IN11
+sw[8] => Add0.IN12
+sw[9] => Div0.IN10
+sw[9] => Add0.IN11
+segment_1000[0] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[1] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[2] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[3] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[4] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[5] <= bcd_7segment:bcd_7segment_1000.port1
+segment_1000[6] <= bcd_7segment:bcd_7segment_1000.port1
+segment_100[0] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[1] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[2] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[3] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[4] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[5] <= bcd_7segment:bcd_7segment_100.port1
+segment_100[6] <= bcd_7segment:bcd_7segment_100.port1
+segment_10[0] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[1] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[2] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[3] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[4] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[5] <= bcd_7segment:bcd_7segment_10.port1
+segment_10[6] <= bcd_7segment:bcd_7segment_10.port1
+segment_1[0] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[1] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[2] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[3] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[4] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[5] <= bcd_7segment:bcd_7segment_1.port1
+segment_1[6] <= bcd_7segment:bcd_7segment_1.port1
+
+
+|test2|Board_7segment_decoder:MJ_7Segment|bcd_7segment:bcd_7segment_1000
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test2|Board_7segment_decoder:MJ_7Segment|bcd_7segment:bcd_7segment_100
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test2|Board_7segment_decoder:MJ_7Segment|bcd_7segment:bcd_7segment_10
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test2|Board_7segment_decoder:MJ_7Segment|bcd_7segment:bcd_7segment_1
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+segment[0] <= segment.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,156 @@
+`define MPNum 16
+`define MPCNum 16
+`define ACCNum 32//`MPNum+`MCNum
+
+`define ACC_H RegACC[`ACCNum-1:`ACCNum-`MPCNum]
+`define ACC_M RegACC[`MPNum-1:0]
+`define M RegACC[0]
+`define CMC RegMtc[`MPCNum-1]
+
+module Signed_Multiplier_NbyM
+(
+	input clk,
+	input St,
+	input [`MPNum-1:0] Mtp,
+	input [`MPCNum-1:0] Mtc,
+	output reg Done,
+	output [`ACCNum-1:0] Product
+);
+
+parameter [1:0] S0 = 2'd0,
+				S1 = 2'd1,
+				S2 = 2'd2,
+				S3 = 2'd3;
+
+reg [1:0] state, nxt_state;
+reg [`ACCNum-1:0] RegACC;
+reg [`MPCNum-1:0] RegMtc;
+reg Sh, AddSh;
+reg Load, CP;
+
+wire CNT;
+wire CM;
+wire Pneg;
+wire K;
+wire [`MPCNum-1:0] MtcComp;
+wire [`MPCNum:0] Addout;
+
+upcounter_4bits counter
+(
+	.clk(clk),
+	.CNT(CNT),
+	.K(K)
+);
+
+initial
+begin
+	state = 2'd0; 
+	nxt_state = 2'd0;
+	
+	RegACC = 0; 
+	RegMtc = 0;
+	
+	Sh = 1'd0; 
+	AddSh = 1'd0; 
+	
+	Done = 1'd0;
+	Load = 1'd0; 
+	CP = 1'd0;
+end
+
+
+assign CM = Mtp[`MPCNum-1];
+assign CNT = Sh | AddSh;
+assign Product = RegACC[`ACCNum-1:0];
+assign MtcComp = (`CMC)? (~RegMtc) + 1'b1 : RegMtc;
+assign Addout = {1'b0, `ACC_H} + {1'b0, MtcComp};
+assign Pneg = CM ^ `CMC;
+
+
+always @(posedge clk)
+begin 
+	state <= nxt_state;
+
+	if(Load) 
+	begin
+		RegACC <= 0;
+		if(CM) `ACC_M <= (~Mtp) + 1'b1;
+		else `ACC_M <= Mtp;
+		RegMtc <= Mtc;
+	end
+
+	
+	if(Sh) 
+	begin
+		`ACC_H <= {1'b0, RegACC[`ACCNum-1:`ACCNum-`MPCNum+1]};
+		`ACC_M <= RegACC[`MPNum:1];
+	end
+	
+	if(AddSh) 
+	begin
+		`ACC_H <= Addout[`MPCNum:1];
+		`ACC_M <= {Addout[0], RegACC[`MPNum-1:1]};
+	end
+
+	if(CP) RegACC <= (~RegACC) + 1'b1;	
+end
+
+
+always @(state, St, K, `M, Pneg)
+begin
+	Sh = 1'd0; 
+	AddSh = 1'd0; 
+	Done = 1'd0;
+	Load = 1'd0; 
+	CP = 1'd0;
+	// FOR NO NEED LATCH
+	
+	case(state)
+	
+	S0 : 
+	begin 
+		if(St) 
+		begin
+			Load <= 1'd1;
+			nxt_state <= S1;
+		end
+		else nxt_state <= S0;
+	end
+	
+	S1:
+	begin 
+		if(K)
+		begin
+			if(`M) AddSh <= 1'd1;
+			else Sh <= 1'd1;
+			nxt_state <= S2;
+		end
+		else
+		begin
+			if(`M) AddSh <= 1'd1;
+			else Sh <= 1'd1;
+			nxt_state <= S1;
+		end
+	end
+
+	S2:
+	begin 
+		if(Pneg) CP <= 1'd1;
+		nxt_state <= S3;
+	end
+	
+	S3:
+	begin 
+		Done <= 1'd1;
+		nxt_state <= S0;
+	end
+	
+	default :
+	begin
+		nxt_state <= S0;
+	end
+	
+	endcase
+end
+
+endmodule	

@@ -1,0 +1,90 @@
+module tb_counter_8bits_74163;
+
+reg clk;
+reg Load_N;
+reg Clear_N;
+reg P;
+reg T;
+reg [3:0] Din1;
+reg [3:0] Din2;
+wire [3:0] Qout1;
+wire [3:0] Qout2;
+wire [1:0] Carry;
+
+counter_8bits_74163 t_counter_8bits_74163
+(
+	.clk(clk),
+	.Load_N(Load_N),
+	.Clear_N(Clear_N),
+	.P(P),
+	.T(T),
+	.Din1(Din1),
+	.Din2(Din2),
+	.Qout1(Qout1),
+	.Qout2(Qout2),
+	.Carry(Carry)
+);
+
+initial
+begin
+	Clear_N = 1'b1;
+	Load_N = 1'b1;
+	clk = 1'b1;
+	P = 1'b0;
+	T = 1'b0;
+	Din1 = 4'd4;  
+	Din2 = 4'd3;
+end
+
+
+always
+begin
+	#3 clk = ~clk;
+end
+
+initial
+begin
+	#6 Clear_N = 1'b1; Load_N = 1'b0; 
+		P = 1'b0; T = 1'b0;
+	#6 Clear_N = 1'b1; Load_N = 1'b1;
+		P = 1'b1; T = 1'b0;
+	#6 Clear_N = 1'b1; Load_N = 1'b1;
+		P = 0'b1; T = 1'b1;
+	#6 Clear_N = 1'b1; Load_N = 1'b1;
+		P = 1'b1; T = 1'b1;
+		
+	#24 Clear_N = 1'b0; Load_N = 1'b1;
+		P = 1'b1; T = 1'b1;
+	#6 Clear_N = 1'b0; Load_N = 1'b1;
+		P = 1'b0; T = 1'b1;	
+	#6 Clear_N = 1'b0; Load_N = 1'b1;
+		P = 1'b1; T = 1'b0;	
+	#6 Clear_N = 1'b0; Load_N = 1'b1;
+		P = 1'b0; T = 1'b0;	
+	#6 Clear_N = 1'b1; Load_N = 1'b1;
+		P = 1'b1; T = 1'b1;	
+	
+	#24 Clear_N = 1'b1; Load_N = 1'b0;
+		P = 1'b1; T = 1'b1;
+	#6 Clear_N = 1'b1; Load_N = 1'b0;
+		P = 1'b0; T = 1'b1;	
+	#6 Clear_N = 1'b1; Load_N = 1'b0;
+		P = 1'b1; T = 1'b0;	
+	#6 Clear_N = 1'b1; Load_N = 1'b0;
+		P = 1'b0; T = 1'b0;	
+	#6 Clear_N = 1'b1; Load_N = 1'b1;
+		P = 1'b1; T = 1'b1;	
+		
+	#24 Clear_N = 1'b0; Load_N = 1'b0;
+		P = 1'b1; T = 1'b1;
+	#6 Clear_N = 1'b0; Load_N = 1'b0;
+		P = 1'b0; T = 1'b1;	
+	#6 Clear_N = 1'b0; Load_N = 1'b0;
+		P = 1'b1; T = 1'b0;	
+	#6 Clear_N = 1'b0; Load_N = 1'b0;
+		P = 1'b0; T = 1'b0;	
+	#6 Clear_N = 1'b1; Load_N = 1'b1;
+		P = 1'b1; T = 1'b1;		
+end
+
+endmodule

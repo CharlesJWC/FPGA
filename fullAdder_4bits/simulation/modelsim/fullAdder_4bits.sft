@@ -1,0 +1,4 @@
+set tool_name "ModelSim (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {fullAdder_4bits.vo fullAdder_4bits_v.sdo}}
+}

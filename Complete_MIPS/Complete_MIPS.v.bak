@@ -1,0 +1,26 @@
+module Complete_MIPS
+(
+	input CLK,
+	input RST,
+	input init, WE_TB, CS_TB,
+	input [31:0] AddressTB,
+	output [31:0] Addr_Out,
+	output [31:0] Mem_Out
+);
+
+wire CS, WE;
+wire WE_MUX, CS_MUX;
+
+wire[31:0] Address, Address_MUX, Mem_Bus_Wire;
+
+assign Address_MUX = (init)? AddressTB: Address;
+assign WE_MUX = (init)? WE_TB : WE;
+assign CS_MUX = (init)? CS_TB : CS;
+
+assign A_Out = Address;
+assign B_Out = Mem_Bus_Wire;
+
+MIPS CPU(CLK,RST, CS, WE, Address, Mem_Bus_Wire);
+Memory MEM(CS_MUX, WE_MUX, CLK, Address_MUX, Mem_Bus_Wire);
+
+endmodule

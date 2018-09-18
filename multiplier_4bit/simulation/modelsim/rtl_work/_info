@@ -1,0 +1,76 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/simulation/modelsim
+vmultiplier_4bit
+Z1 !s110 1508948889
+!i10b 1
+!s100 2548o[J`UbNGZj`3zf<_C0
+I:JPj4bG==b>@6;S@4[Ebj3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1508948831
+8D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/multiplier_4bit.v
+FD:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/multiplier_4bit.v
+L0 10
+Z3 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z4 !s108 1508948888.000000
+!s107 D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/multiplier_4bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit|D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/multiplier_4bit.v|
+!s101 -O0
+!i113 1
+Z5 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+Z6 !s92 -vlog01compat -work work +incdir+D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+vtb_multiplier_4bit
+R1
+!i10b 1
+!s100 n_IAeA8ce1JD;6oaPFzQF0
+IO^XWlZ7M[8YeT09UiSHmn3
+R2
+R0
+w1508939439
+8D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/tb_multiplier_4bit.v
+FD:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/tb_multiplier_4bit.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1508948889.000000
+!s107 D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/tb_multiplier_4bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit|D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/tb_multiplier_4bit.v|
+!s101 -O0
+!i113 1
+R5
+R6
+vupcounter_4bits
+!s110 1508948888
+!i10b 1
+!s100 H7?=;:9HiaBIJb]b3VGcX1
+Io@ZBf_nXMR`?J`D=UD?lR0
+R2
+R0
+w1508939709
+8D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/upcounter_4bits.v
+FD:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/upcounter_4bits.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/upcounter_4bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit|D:/Workspace/Altera_Quartus_Workspace/multiplier_4bit/upcounter_4bits.v|
+!s101 -O0
+!i113 1
+R5
+R6

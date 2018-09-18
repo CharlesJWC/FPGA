@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Dec 11 15:28:35 2017
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : Board_7segment_decoder
+Top-level Entity Name : Board_7segment_decoder
+Family : Cyclone II
+Total logic elements : 153
+    Total combinational functions : 153
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 38
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

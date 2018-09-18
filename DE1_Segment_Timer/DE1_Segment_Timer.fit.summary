@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Nov 08 08:31:21 2017
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : DE1_Segment_Timer
+Top-level Entity Name : DE1_Segment_Timer
+Family : Cyclone II
+Device : EP2C20F484C7
+Timing Models : Final
+Total logic elements : 156 / 18,752 ( < 1 % )
+    Total combinational functions : 156 / 18,752 ( < 1 % )
+    Dedicated logic registers : 37 / 18,752 ( < 1 % )
+Total registers : 37
+Total pins : 30 / 315 ( 10 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

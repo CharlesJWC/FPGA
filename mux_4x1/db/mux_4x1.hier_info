@@ -1,0 +1,11 @@
+|mux_4x1
+in0 => out.DATAA
+in1 => out.DATAB
+in2 => out.DATAA
+in3 => out.DATAB
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[1] => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

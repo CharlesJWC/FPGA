@@ -1,0 +1,4 @@
+set tool_name "ModelSim (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {counter_8bits_74163.vo counter_8bits_74163_v.sdo}}
+}

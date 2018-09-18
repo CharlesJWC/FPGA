@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Dec 15 10:32:28 2017
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : Complete_Processor
+Top-level Entity Name : Complete_Processor
+Family : Cyclone II
+Device : EP2C20F484C7
+Timing Models : Final
+Total logic elements : 1,604 / 18,752 ( 9 % )
+    Total combinational functions : 1,598 / 18,752 ( 9 % )
+    Dedicated logic registers : 46 / 18,752 ( < 1 % )
+Total registers : 46
+Total pins : 50 / 315 ( 16 % )
+Total virtual pins : 0
+Total memory bits : 512 / 239,616 ( < 1 % )
+Embedded Multiplier 9-bit elements : 2 / 52 ( 4 % )
+Total PLLs : 1 / 4 ( 25 % )

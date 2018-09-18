@@ -1,0 +1,4 @@
+set tool_name "ModelSim (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {Board_7segment_decoder.vo Board_7segment_decoder_v.sdo}}
+}

@@ -1,0 +1,205 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+7
+3500
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+Signed_Multiplier_NbyM
+# storage
+db|Signed_Multiplier_NbyM.(0).cnf
+db|Signed_Multiplier_NbyM.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+signed_muliplier_nbym.v
+3e8012fd9b2791e41ada29a3e3f7b74
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+S0
+00
+PARAMETER_UNSIGNED_BIN
+DEF
+S1
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+S2
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+S3
+11
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# macro_sequence
+MPNum16MPCNum16ACCNum32ACCNum32MPCNum16MPCNum16MPCNum16MPCNum16ACCNum32CMCRegMtc[`MPCNum-1]MPCNum16ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]ACCNum32ACCNum32MPCNum16CMCRegMtc[`MPCNum-1]MPCNum16ACC_MRegACC[`MPNum-1:0]MPNum16ACC_MRegACC[`MPNum-1:0]MPNum16ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]ACCNum32ACCNum32MPCNum16ACCNum32ACCNum32MPCNum16ACC_MRegACC[`MPNum-1:0]MPNum16MPNum16ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]ACCNum32ACCNum32MPCNum16MPCNum16ACC_MRegACC[`MPNum-1:0]MPNum16MPNum16MRegACC[0]MRegACC[0]MRegACC[0]
+# end
+# entity
+upcounter_4bits
+# storage
+db|Signed_Multiplier_NbyM.(1).cnf
+db|Signed_Multiplier_NbyM.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+upcounter_4bits.v
+895f78ba664731e229761a2d158bd6d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+signed_muliplier_nbym.v
+3e8012fd9b2791e41ada29a3e3f7b74
+}
+# macro_sequence
+MPNum16MPNum16
+# end
+# entity
+Signed_Multiplier_NbyM
+# storage
+db|Signed_Multiplier_NbyM.(2).cnf
+db|Signed_Multiplier_NbyM.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|workspace|altera_quartus_workspace|multiplier_4bit|multiplier_4bit_n.v
+7818f939a017ea8f503c268a630957e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+S0
+00
+PARAMETER_UNSIGNED_BIN
+DEF
+S1
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+S2
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+S3
+11
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+|
+}
+# macro_sequence
+MPNum16	MPCNum16	ACCNum32	ACCNum32	MPCNum16	MPCNum16	MPCNum16	MPCNum16	ACCNum32	CMCRegMtc[`MPCNum-1]					MPCNum16	ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]	ACCNum32	ACCNum32	MPCNum16	CMCRegMtc[`MPCNum-1]					MPCNum16	ACC_MRegACC[`MPNum-1:0]				MPNum16	ACC_MRegACC[`MPNum-1:0]				MPNum16	MRegACC[0]								ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]	ACCNum32	ACCNum32	MPCNum16	MPCNum16	ACC_MRegACC[`MPNum-1:0]				MPNum16	MPNum16	ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]	ACCNum32	ACCNum32	MPCNum16	ACCNum32	ACCNum32	MPCNum16	ACC_MRegACC[`MPNum-1:0]				MPNum16	MPNum16	MRegACC[0]								ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]	ACCNum32	ACCNum32	MPCNum16	MPCNum16	ACC_MRegACC[`MPNum-1:0]				MPNum16	MPNum16	ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]	ACCNum32	ACCNum32	MPCNum16	ACCNum32	ACCNum32	MPCNum16	ACC_MRegACC[`MPNum-1:0]				MPNum16	MPNum16	
+# end
+# entity
+upcounter_4bits
+# storage
+db|Signed_Multiplier_NbyM.(3).cnf
+db|Signed_Multiplier_NbyM.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+upcounter_4bits.v
+895f78ba664731e229761a2d158bd6d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+|workspace|altera_quartus_workspace|multiplier_4bit|multiplier_4bit_n.v
+7818f939a017ea8f503c268a630957e
+}
+# hierarchies {
+upcounter_4bits:counter
+}
+# macro_sequence
+MPNum16MPNum16
+# end
+# complete
+

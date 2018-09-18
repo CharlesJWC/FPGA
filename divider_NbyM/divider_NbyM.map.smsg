@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at divider_NbyM.v(96): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at upcounter_4bits.v(19): always construct contains both blocking and non-blocking assignments

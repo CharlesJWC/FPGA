@@ -1,0 +1,41 @@
+`timescale 1ns / 1ps
+
+module Divider
+(
+	input CLK, St,
+    input [7:0] dividend,
+    input [7:0] divisor,
+    output [7:0] quotient, 
+    output [7:0] remainder, 
+    output Done 
+);
+
+integer i;
+reg [7:0] diff; // remainder - divisor diff result 
+
+reg [7:0] qu;// quotient
+reg [7:0] rem;// remainder
+
+assign remainder [7:0] = rem[7:0];
+assign quotient [7:0] = qu[7:0];
+
+always @(posedge CLK) begin
+	rem [7:0] = 8'b0; // assign reminader to all zeros initially
+	qu [7:0] = dividend[7:0]; // place dividend in Quotient
+	
+	for (i=0;i<=7;i=i+1)
+	begin
+		rem = rem<<1;// first iteration shift
+		rem[0] = qu[7];// first iteration shift
+		qu = qu<<1;// first iteration shift
+		qu[0] = 1'b0;// first iteration shift
+	
+		if ( rem >= divisor) 
+		begin
+			rem = rem-divisor;
+			qu[0] = 1'b1;
+		end
+	end
+end 
+
+endmodule

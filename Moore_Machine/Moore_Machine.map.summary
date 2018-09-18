@@ -1,0 +1,15 @@
+Analysis & Synthesis Status : Successful - Mon Oct 23 09:55:46 2017
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : Moore_Machine
+Top-level Entity Name : Moore_Machine
+Family : Stratix II
+Logic utilization : N/A
+    Combinational ALUTs : 4
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 4
+Total virtual pins : 0
+Total block memory bits : 0
+DSP block 9-bit elements : 0
+Total PLLs : 0
+Total DLLs : 0

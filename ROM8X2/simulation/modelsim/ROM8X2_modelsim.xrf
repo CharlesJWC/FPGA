@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/ROM8X2/ROM8X2.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/ROM8X2/tb_ROM8X2.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/ROM8X2/db/ROM8X2.cbx.xml
+design_name = ROM8X2
+instance = comp, \C~I , C, ROM8X2, 1
+instance = comp, \B~I , B, ROM8X2, 1
+instance = comp, \A~I , A, ROM8X2, 1
+instance = comp, \ROM~0 , ROM~0, ROM8X2, 1
+instance = comp, \ROM~1 , ROM~1, ROM8X2, 1
+instance = comp, \F~I , F, ROM8X2, 1
+instance = comp, \G~I , G, ROM8X2, 1

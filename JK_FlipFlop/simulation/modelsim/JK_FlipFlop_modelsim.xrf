@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/JK_FlipFlop/JK_FlipFlop.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/JK_FlipFlop/tb_JK_FlipFlop.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/JK_FlipFlop/db/JK_FlipFlop.cbx.xml
+design_name = JK_FlipFlop
+instance = comp, \clk~I , clk, JK_FlipFlop, 1
+instance = comp, \J~I , J, JK_FlipFlop, 1
+instance = comp, \K~I , K, JK_FlipFlop, 1
+instance = comp, \Mux0~0 , Mux0~0, JK_FlipFlop, 1
+instance = comp, \Q~reg0 , Q~reg0, JK_FlipFlop, 1
+instance = comp, \Q~I , Q, JK_FlipFlop, 1
+instance = comp, \Qbar~I , Qbar, JK_FlipFlop, 1

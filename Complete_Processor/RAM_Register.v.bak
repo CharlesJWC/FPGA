@@ -1,0 +1,47 @@
+module RAM_Register
+(
+	input clk,
+	input mem_rst,
+	input [1:0] RegW,
+	
+	input [3:0] DR,
+	input [3:0] SR1, 
+	input [3:0] SR2, 
+	input [15:0] Write_data, 
+	
+	output reg [15:0] SR1_Data,
+	output reg [15:0] SR2_Data
+);
+
+parameter	READ = 2'b00,
+			WRITE_sv = 2'b01,
+			WRITE_mp = 2'b11,
+			DISABLE = 2'b10;
+			
+reg [15:0] RAM_REG [0:15];
+integer i;
+
+initial
+ begin
+	SR1_Data = 16'd0;
+	SR2_Data = 16'd0;
+	for (i = 0; i < 16; i = i + 1)
+	begin 
+		RAM_REG[i] = 16'd12345;
+	end
+end
+   
+always@(posedge clk)
+begin
+	if(RegW[0] == 1'b1)
+	begin
+		RAM_REG[DR] <= Write_data;
+	end
+	else
+	begin
+	end
+	SR1_Data <= RAM_REG[SR1]; 
+	SR2_Data <= RAM_REG[SR2];
+end
+
+endmodule 

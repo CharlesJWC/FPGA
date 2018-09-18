@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at multiplier_4bit_n.v(60): always construct contains both blocking and non-blocking assignments

@@ -1,0 +1,7 @@
+|ROM8X3
+X => ROM.RADDR
+clk => Q[1].CLK
+clk => Q[2].CLK
+Z <= ROM.DATAOUT
+
+

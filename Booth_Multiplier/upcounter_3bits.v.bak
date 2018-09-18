@@ -1,0 +1,29 @@
+`define MPNum 5
+
+module upcounter_3bits
+(
+	input clk,
+	input CNT,
+	output K
+);
+
+reg [2:0] Count;
+
+initial 
+begin
+	Count = 3'd0;
+end
+
+assign K = (Count == `MPNum-1)? 1'd1 : 1'd0;
+
+always @(posedge clk)
+begin
+	if(CNT)
+	begin
+		if (Count == `MPNum-1) Count <= 3'd0;
+		else Count <= Count + 3'd1;
+	end
+	else Count <= Count;
+end
+
+endmodule

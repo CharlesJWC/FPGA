@@ -1,0 +1,531 @@
+Classic Timing Analyzer report for Booth_Multiplier
+Thu Oct 26 14:27:24 2017
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                    ;
++------------------------------+-------+---------------+----------------------------------+-------------+-------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From        ; To          ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------+-------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 3.707 ns                         ; St          ; RegMtp_B[8] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.061 ns                         ; RegMtp_B[7] ; Product[6]  ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.199 ns                        ; Mtp[7]      ; RegMtp_B[8] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 336.59 MHz ( period = 2.971 ns ) ; RegMtp_B[1] ; RegACC_A[8] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;             ;             ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------+-------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2S15F484C3       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; Off                ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                             ; To                               ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 336.59 MHz ( period = 2.971 ns )                    ; RegMtp_B[1]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.788 ns                ;
+; N/A                                     ; 350.26 MHz ( period = 2.855 ns )                    ; RegMtp_B[0]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.671 ns                ;
+; N/A                                     ; 387.90 MHz ( period = 2.578 ns )                    ; RegMtp_B[0]                      ; RegMtp_B[1]                      ; clk        ; clk      ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 387.90 MHz ( period = 2.578 ns )                    ; RegMtp_B[0]                      ; RegMtp_B[2]                      ; clk        ; clk      ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 387.90 MHz ( period = 2.578 ns )                    ; RegMtp_B[0]                      ; RegMtp_B[3]                      ; clk        ; clk      ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 387.90 MHz ( period = 2.578 ns )                    ; RegMtp_B[0]                      ; RegMtp_B[4]                      ; clk        ; clk      ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 387.90 MHz ( period = 2.578 ns )                    ; RegMtp_B[0]                      ; RegMtp_B[5]                      ; clk        ; clk      ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 387.90 MHz ( period = 2.578 ns )                    ; RegMtp_B[0]                      ; RegMtp_B[6]                      ; clk        ; clk      ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 387.90 MHz ( period = 2.578 ns )                    ; RegMtp_B[0]                      ; RegMtp_B[7]                      ; clk        ; clk      ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 387.90 MHz ( period = 2.578 ns )                    ; RegMtp_B[0]                      ; RegMtp_B[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 400.48 MHz ( period = 2.497 ns )                    ; RegMtc_C[0]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.313 ns                ;
+; N/A                                     ; 402.09 MHz ( period = 2.487 ns )                    ; state.S2                         ; RegMtp_B[1]                      ; clk        ; clk      ; None                        ; None                      ; 2.302 ns                ;
+; N/A                                     ; 402.09 MHz ( period = 2.487 ns )                    ; state.S2                         ; RegMtp_B[2]                      ; clk        ; clk      ; None                        ; None                      ; 2.302 ns                ;
+; N/A                                     ; 402.09 MHz ( period = 2.487 ns )                    ; state.S2                         ; RegMtp_B[3]                      ; clk        ; clk      ; None                        ; None                      ; 2.302 ns                ;
+; N/A                                     ; 402.09 MHz ( period = 2.487 ns )                    ; state.S2                         ; RegMtp_B[4]                      ; clk        ; clk      ; None                        ; None                      ; 2.302 ns                ;
+; N/A                                     ; 402.09 MHz ( period = 2.487 ns )                    ; state.S2                         ; RegMtp_B[5]                      ; clk        ; clk      ; None                        ; None                      ; 2.302 ns                ;
+; N/A                                     ; 402.09 MHz ( period = 2.487 ns )                    ; state.S2                         ; RegMtp_B[6]                      ; clk        ; clk      ; None                        ; None                      ; 2.302 ns                ;
+; N/A                                     ; 402.09 MHz ( period = 2.487 ns )                    ; state.S2                         ; RegMtp_B[7]                      ; clk        ; clk      ; None                        ; None                      ; 2.302 ns                ;
+; N/A                                     ; 402.09 MHz ( period = 2.487 ns )                    ; state.S2                         ; RegMtp_B[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.302 ns                ;
+; N/A                                     ; 406.17 MHz ( period = 2.462 ns )                    ; RegMtc_C[1]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.278 ns                ;
+; N/A                                     ; 410.51 MHz ( period = 2.436 ns )                    ; RegMtp_B[1]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 2.254 ns                ;
+; N/A                                     ; 412.03 MHz ( period = 2.427 ns )                    ; RegMtc_C[2]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.243 ns                ;
+; N/A                                     ; 413.91 MHz ( period = 2.416 ns )                    ; RegMtp_B[1]                      ; RegMtp_B[1]                      ; clk        ; clk      ; None                        ; None                      ; 2.232 ns                ;
+; N/A                                     ; 413.91 MHz ( period = 2.416 ns )                    ; RegMtp_B[1]                      ; RegMtp_B[2]                      ; clk        ; clk      ; None                        ; None                      ; 2.232 ns                ;
+; N/A                                     ; 413.91 MHz ( period = 2.416 ns )                    ; RegMtp_B[1]                      ; RegMtp_B[3]                      ; clk        ; clk      ; None                        ; None                      ; 2.232 ns                ;
+; N/A                                     ; 413.91 MHz ( period = 2.416 ns )                    ; RegMtp_B[1]                      ; RegMtp_B[4]                      ; clk        ; clk      ; None                        ; None                      ; 2.232 ns                ;
+; N/A                                     ; 413.91 MHz ( period = 2.416 ns )                    ; RegMtp_B[1]                      ; RegMtp_B[5]                      ; clk        ; clk      ; None                        ; None                      ; 2.232 ns                ;
+; N/A                                     ; 413.91 MHz ( period = 2.416 ns )                    ; RegMtp_B[1]                      ; RegMtp_B[6]                      ; clk        ; clk      ; None                        ; None                      ; 2.232 ns                ;
+; N/A                                     ; 413.91 MHz ( period = 2.416 ns )                    ; RegMtp_B[1]                      ; RegMtp_B[7]                      ; clk        ; clk      ; None                        ; None                      ; 2.232 ns                ;
+; N/A                                     ; 413.91 MHz ( period = 2.416 ns )                    ; RegMtp_B[1]                      ; RegMtp_B[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.232 ns                ;
+; N/A                                     ; 416.67 MHz ( period = 2.400 ns )                    ; RegMtp_B[1]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 2.218 ns                ;
+; N/A                                     ; 418.06 MHz ( period = 2.392 ns )                    ; RegMtc_C[3]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.208 ns                ;
+; N/A                                     ; 422.83 MHz ( period = 2.365 ns )                    ; RegMtp_B[1]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 2.183 ns                ;
+; N/A                                     ; 424.27 MHz ( period = 2.357 ns )                    ; RegMtc_C[4]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.173 ns                ;
+; N/A                                     ; 429.37 MHz ( period = 2.329 ns )                    ; RegMtp_B[1]                      ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 2.147 ns                ;
+; N/A                                     ; 430.66 MHz ( period = 2.322 ns )                    ; RegMtc_C[5]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.138 ns                ;
+; N/A                                     ; 431.03 MHz ( period = 2.320 ns )                    ; RegMtp_B[0]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 2.137 ns                ;
+; N/A                                     ; 437.83 MHz ( period = 2.284 ns )                    ; RegMtp_B[0]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 2.101 ns                ;
+; N/A                                     ; 441.31 MHz ( period = 2.266 ns )                    ; RegMtp_B[1]                      ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 2.084 ns                ;
+; N/A                                     ; 444.25 MHz ( period = 2.251 ns )                    ; RegMtc_C[6]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.067 ns                ;
+; N/A                                     ; 444.64 MHz ( period = 2.249 ns )                    ; RegMtp_B[0]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 2.066 ns                ;
+; N/A                                     ; 451.88 MHz ( period = 2.213 ns )                    ; RegMtp_B[0]                      ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 2.030 ns                ;
+; N/A                                     ; 465.12 MHz ( period = 2.150 ns )                    ; RegMtp_B[0]                      ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.967 ns                ;
+; N/A                                     ; 473.04 MHz ( period = 2.114 ns )                    ; state.S1                         ; RegMtp_B[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.929 ns                ;
+; N/A                                     ; 473.04 MHz ( period = 2.114 ns )                    ; state.S1                         ; RegMtp_B[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.929 ns                ;
+; N/A                                     ; 473.04 MHz ( period = 2.114 ns )                    ; state.S1                         ; RegMtp_B[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.929 ns                ;
+; N/A                                     ; 473.04 MHz ( period = 2.114 ns )                    ; state.S1                         ; RegMtp_B[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.929 ns                ;
+; N/A                                     ; 473.04 MHz ( period = 2.114 ns )                    ; state.S1                         ; RegMtp_B[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.929 ns                ;
+; N/A                                     ; 473.04 MHz ( period = 2.114 ns )                    ; state.S1                         ; RegMtp_B[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.929 ns                ;
+; N/A                                     ; 473.04 MHz ( period = 2.114 ns )                    ; state.S1                         ; RegMtp_B[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.929 ns                ;
+; N/A                                     ; 473.04 MHz ( period = 2.114 ns )                    ; state.S1                         ; RegMtp_B[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.929 ns                ;
+; N/A                                     ; 482.39 MHz ( period = 2.073 ns )                    ; RegMtp_B[1]                      ; RegACC_A[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.891 ns                ;
+; N/A                                     ; 486.14 MHz ( period = 2.057 ns )                    ; state.S2                         ; RegACC_A[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.874 ns                ;
+; N/A                                     ; 486.14 MHz ( period = 2.057 ns )                    ; state.S2                         ; RegACC_A[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.874 ns                ;
+; N/A                                     ; 486.14 MHz ( period = 2.057 ns )                    ; state.S2                         ; RegACC_A[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.874 ns                ;
+; N/A                                     ; 486.14 MHz ( period = 2.057 ns )                    ; state.S2                         ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.874 ns                ;
+; N/A                                     ; 486.14 MHz ( period = 2.057 ns )                    ; state.S2                         ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.874 ns                ;
+; N/A                                     ; 486.14 MHz ( period = 2.057 ns )                    ; state.S2                         ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.874 ns                ;
+; N/A                                     ; 486.14 MHz ( period = 2.057 ns )                    ; state.S2                         ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.874 ns                ;
+; N/A                                     ; 486.14 MHz ( period = 2.057 ns )                    ; state.S2                         ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.874 ns                ;
+; N/A                                     ; 491.16 MHz ( period = 2.036 ns )                    ; RegMtc_C[7]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.852 ns                ;
+; N/A                                     ; 497.51 MHz ( period = 2.010 ns )                    ; RegMtp_B[1]                      ; RegACC_A[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.828 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; RegACC_A[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.790 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[0]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.779 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[1]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.744 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[0]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.743 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; RegACC_A[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.727 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegACC_A[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.713 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegACC_A[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.713 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegACC_A[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.713 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.713 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.713 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.713 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.713 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.713 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[2]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.709 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtp_B[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.705 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtp_B[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.705 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtp_B[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.705 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtp_B[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.705 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtp_B[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.705 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtp_B[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.705 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtp_B[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.705 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtp_B[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.705 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[0]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.708 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[1]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.708 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[3]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.674 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[1]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.673 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[2]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.673 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[0]                      ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.672 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[4]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.639 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[2]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.638 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[3]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.638 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[1]                      ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.637 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; upcounter_3bits:counter|Count[1] ; clk        ; clk      ; None                        ; None                      ; 1.611 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; upcounter_3bits:counter|Count[0] ; clk        ; clk      ; None                        ; None                      ; 1.611 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[0]                      ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.609 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[5]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.604 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[3]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.603 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[2]                      ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.602 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[4]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.590 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegACC_A[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegACC_A[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegACC_A[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.586 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; RegACC_A[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.583 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[1]                      ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.574 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[8]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.569 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; state.S1                         ; clk        ; clk      ; None                        ; None                      ; 1.557 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[2]                      ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.539 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[5]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.534 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[3]                      ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.533 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[6]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.533 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[4]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.532 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S2                         ; upcounter_3bits:counter|Count[1] ; clk        ; clk      ; None                        ; None                      ; 1.520 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S2                         ; upcounter_3bits:counter|Count[0] ; clk        ; clk      ; None                        ; None                      ; 1.520 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; upcounter_3bits:counter|Count[2] ; clk        ; clk      ; None                        ; None                      ; 1.482 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[3]                      ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.468 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[6]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.463 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[4]                      ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.462 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[5]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.456 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[1]                      ; upcounter_3bits:counter|Count[1] ; clk        ; clk      ; None                        ; None                      ; 1.450 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[1]                      ; upcounter_3bits:counter|Count[0] ; clk        ; clk      ; None                        ; None                      ; 1.450 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[0]                      ; RegACC_A[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.432 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[0]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.424 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[1]                      ; RegACC_A[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.422 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S2                         ; upcounter_3bits:counter|Count[2] ; clk        ; clk      ; None                        ; None                      ; 1.391 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[1]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.389 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[1]                      ; RegACC_A[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.378 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[0]                      ; RegACC_A[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.369 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; state.S0                         ; clk        ; clk      ; None                        ; None                      ; 1.367 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[2]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.354 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtc_C[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.347 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtc_C[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.347 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtc_C[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.347 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtc_C[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.347 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtc_C[4]                      ; clk        ; clk      ; None                        ; None                      ; 1.347 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtc_C[5]                      ; clk        ; clk      ; None                        ; None                      ; 1.347 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtc_C[6]                      ; clk        ; clk      ; None                        ; None                      ; 1.347 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtc_C[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.347 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.345 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[3]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.319 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[1]                      ; upcounter_3bits:counter|Count[2] ; clk        ; clk      ; None                        ; None                      ; 1.321 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S2                         ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.312 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[7]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 1.310 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[2]                      ; RegACC_A[2]                      ; clk        ; clk      ; None                        ; None                      ; 1.307 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[1]                      ; RegACC_A[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.298 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtc_C[0]                      ; RegACC_A[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.297 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[4]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.284 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[1]                      ; RegMtp_B[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.280 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[1]                      ; state.S1                         ; clk        ; clk      ; None                        ; None                      ; 1.254 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[5]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.249 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; upcounter_3bits:counter|Count[1] ; state.S0                         ; clk        ; clk      ; None                        ; None                      ; 1.231 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[6]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.214 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; upcounter_3bits:counter|Count[0] ; state.S0                         ; clk        ; clk      ; None                        ; None                      ; 1.203 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; RegMtp_B[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.191 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; state.S1                         ; clk        ; clk      ; None                        ; None                      ; 1.175 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegMtp_B[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.173 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.170 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[7]                      ; RegACC_A[8]                      ; clk        ; clk      ; None                        ; None                      ; 1.152 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; upcounter_3bits:counter|Count[1] ; state.S1                         ; clk        ; clk      ; None                        ; None                      ; 1.150 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; upcounter_3bits:counter|Count[1] ; clk        ; clk      ; None                        ; None                      ; 1.147 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; upcounter_3bits:counter|Count[0] ; clk        ; clk      ; None                        ; None                      ; 1.147 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; upcounter_3bits:counter|Count[0] ; state.S1                         ; clk        ; clk      ; None                        ; None                      ; 1.122 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S2                         ; RegMtp_B[0]                      ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; upcounter_3bits:counter|Count[2] ; state.S0                         ; clk        ; clk      ; None                        ; None                      ; 1.064 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[1]                      ; state.S0                         ; clk        ; clk      ; None                        ; None                      ; 1.064 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[0]                      ; state.S2                         ; clk        ; clk      ; None                        ; None                      ; 1.022 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; upcounter_3bits:counter|Count[2] ; clk        ; clk      ; None                        ; None                      ; 1.018 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; upcounter_3bits:counter|Count[2] ; state.S1                         ; clk        ; clk      ; None                        ; None                      ; 0.983 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; state.S0                         ; clk        ; clk      ; None                        ; None                      ; 0.985 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[0]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 0.890 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[0]                      ; RegMtp_B[8]                      ; clk        ; clk      ; None                        ; None                      ; 0.876 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; state.S0                         ; clk        ; clk      ; None                        ; None                      ; 0.864 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[0]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 0.855 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[1]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 0.855 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[0]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 0.820 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[1]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 0.820 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[2]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 0.820 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[7]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 0.805 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[4]                      ; RegMtp_B[3]                      ; clk        ; clk      ; None                        ; None                      ; 0.798 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[0]                      ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 0.785 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[1]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 0.785 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[2]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 0.785 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[3]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 0.785 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S0                         ; state.S1                         ; clk        ; clk      ; None                        ; None                      ; 0.783 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; upcounter_3bits:counter|Count[0] ; upcounter_3bits:counter|Count[2] ; clk        ; clk      ; None                        ; None                      ; 0.767 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[3]                      ; RegMtp_B[2]                      ; clk        ; clk      ; None                        ; None                      ; 0.765 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[0]                      ; RegACC_A[3]                      ; clk        ; clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[1]                      ; RegACC_A[4]                      ; clk        ; clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[2]                      ; RegACC_A[5]                      ; clk        ; clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[3]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[4]                      ; RegACC_A[7]                      ; clk        ; clk      ; None                        ; None                      ; 0.750 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; state.S1                         ; RegMtp_B[0]                      ; clk        ; clk      ; None                        ; None                      ; 0.727 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegMtp_B[1]                      ; state.S2                         ; clk        ; clk      ; None                        ; None                      ; 0.719 ns                ;
+; N/A                                     ; Restricted to 500.00 MHz ( period = 2.000 ns )      ; RegACC_A[4]                      ; RegACC_A[6]                      ; clk        ; clk      ; None                        ; None                      ; 0.715 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                  ;                                  ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------+
+; tsu                                                                 ;
++-------+--------------+------------+--------+-------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To          ; To Clock ;
++-------+--------------+------------+--------+-------------+----------+
+; N/A   ; None         ; 3.707 ns   ; St     ; RegMtp_B[1] ; clk      ;
+; N/A   ; None         ; 3.707 ns   ; St     ; RegMtp_B[2] ; clk      ;
+; N/A   ; None         ; 3.707 ns   ; St     ; RegMtp_B[3] ; clk      ;
+; N/A   ; None         ; 3.707 ns   ; St     ; RegMtp_B[4] ; clk      ;
+; N/A   ; None         ; 3.707 ns   ; St     ; RegMtp_B[5] ; clk      ;
+; N/A   ; None         ; 3.707 ns   ; St     ; RegMtp_B[6] ; clk      ;
+; N/A   ; None         ; 3.707 ns   ; St     ; RegMtp_B[7] ; clk      ;
+; N/A   ; None         ; 3.707 ns   ; St     ; RegMtp_B[8] ; clk      ;
+; N/A   ; None         ; 3.587 ns   ; St     ; RegACC_A[0] ; clk      ;
+; N/A   ; None         ; 3.587 ns   ; St     ; RegACC_A[1] ; clk      ;
+; N/A   ; None         ; 3.587 ns   ; St     ; RegACC_A[2] ; clk      ;
+; N/A   ; None         ; 3.587 ns   ; St     ; RegACC_A[3] ; clk      ;
+; N/A   ; None         ; 3.587 ns   ; St     ; RegACC_A[4] ; clk      ;
+; N/A   ; None         ; 3.587 ns   ; St     ; RegACC_A[5] ; clk      ;
+; N/A   ; None         ; 3.587 ns   ; St     ; RegACC_A[6] ; clk      ;
+; N/A   ; None         ; 3.587 ns   ; St     ; RegACC_A[7] ; clk      ;
+; N/A   ; None         ; 3.348 ns   ; St     ; RegMtc_C[0] ; clk      ;
+; N/A   ; None         ; 3.348 ns   ; St     ; RegMtc_C[1] ; clk      ;
+; N/A   ; None         ; 3.348 ns   ; St     ; RegMtc_C[2] ; clk      ;
+; N/A   ; None         ; 3.348 ns   ; St     ; RegMtc_C[3] ; clk      ;
+; N/A   ; None         ; 3.348 ns   ; St     ; RegMtc_C[4] ; clk      ;
+; N/A   ; None         ; 3.348 ns   ; St     ; RegMtc_C[5] ; clk      ;
+; N/A   ; None         ; 3.348 ns   ; St     ; RegMtc_C[6] ; clk      ;
+; N/A   ; None         ; 3.348 ns   ; St     ; RegMtc_C[7] ; clk      ;
+; N/A   ; None         ; 3.303 ns   ; Mtc[2] ; RegMtc_C[2] ; clk      ;
+; N/A   ; None         ; 3.174 ns   ; St     ; RegMtp_B[0] ; clk      ;
+; N/A   ; None         ; 3.171 ns   ; St     ; RegACC_A[8] ; clk      ;
+; N/A   ; None         ; 3.087 ns   ; Mtp[0] ; RegMtp_B[1] ; clk      ;
+; N/A   ; None         ; 3.047 ns   ; Mtp[4] ; RegMtp_B[5] ; clk      ;
+; N/A   ; None         ; 2.984 ns   ; St     ; state.S0    ; clk      ;
+; N/A   ; None         ; 2.913 ns   ; Mtp[5] ; RegMtp_B[6] ; clk      ;
+; N/A   ; None         ; 2.906 ns   ; Mtp[1] ; RegMtp_B[2] ; clk      ;
+; N/A   ; None         ; 2.904 ns   ; St     ; state.S1    ; clk      ;
+; N/A   ; None         ; 2.733 ns   ; Mtp[2] ; RegMtp_B[3] ; clk      ;
+; N/A   ; None         ; 2.725 ns   ; Mtc[6] ; RegMtc_C[6] ; clk      ;
+; N/A   ; None         ; 2.719 ns   ; Mtc[7] ; RegMtc_C[7] ; clk      ;
+; N/A   ; None         ; 2.717 ns   ; Mtc[5] ; RegMtc_C[5] ; clk      ;
+; N/A   ; None         ; 2.675 ns   ; Mtp[3] ; RegMtp_B[4] ; clk      ;
+; N/A   ; None         ; 2.661 ns   ; Mtc[4] ; RegMtc_C[4] ; clk      ;
+; N/A   ; None         ; 2.655 ns   ; Mtc[3] ; RegMtc_C[3] ; clk      ;
+; N/A   ; None         ; 2.469 ns   ; Mtc[0] ; RegMtc_C[0] ; clk      ;
+; N/A   ; None         ; 2.441 ns   ; Mtp[6] ; RegMtp_B[7] ; clk      ;
+; N/A   ; None         ; 2.440 ns   ; Mtc[1] ; RegMtc_C[1] ; clk      ;
+; N/A   ; None         ; 2.438 ns   ; Mtp[7] ; RegMtp_B[8] ; clk      ;
++-------+--------------+------------+--------+-------------+----------+
+
+
++----------------------------------------------------------------------------+
+; tco                                                                        ;
++-------+--------------+------------+-------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From        ; To          ; From Clock ;
++-------+--------------+------------+-------------+-------------+------------+
+; N/A   ; None         ; 7.061 ns   ; RegMtp_B[7] ; Product[6]  ; clk        ;
+; N/A   ; None         ; 6.931 ns   ; RegMtp_B[1] ; Product[0]  ; clk        ;
+; N/A   ; None         ; 6.886 ns   ; RegACC_A[0] ; Product[8]  ; clk        ;
+; N/A   ; None         ; 5.933 ns   ; RegACC_A[5] ; Product[13] ; clk        ;
+; N/A   ; None         ; 5.788 ns   ; RegACC_A[2] ; Product[10] ; clk        ;
+; N/A   ; None         ; 5.783 ns   ; RegMtp_B[4] ; Product[3]  ; clk        ;
+; N/A   ; None         ; 5.696 ns   ; RegMtp_B[8] ; Product[7]  ; clk        ;
+; N/A   ; None         ; 5.631 ns   ; RegACC_A[4] ; Product[12] ; clk        ;
+; N/A   ; None         ; 5.553 ns   ; RegMtp_B[5] ; Product[4]  ; clk        ;
+; N/A   ; None         ; 5.497 ns   ; RegMtp_B[3] ; Product[2]  ; clk        ;
+; N/A   ; None         ; 5.380 ns   ; RegACC_A[3] ; Product[11] ; clk        ;
+; N/A   ; None         ; 5.366 ns   ; RegACC_A[1] ; Product[9]  ; clk        ;
+; N/A   ; None         ; 5.350 ns   ; state.S0    ; Ready       ; clk        ;
+; N/A   ; None         ; 5.335 ns   ; RegMtp_B[2] ; Product[1]  ; clk        ;
+; N/A   ; None         ; 5.127 ns   ; RegACC_A[6] ; Product[14] ; clk        ;
+; N/A   ; None         ; 5.123 ns   ; RegMtp_B[6] ; Product[5]  ; clk        ;
++-------+--------------+------------+-------------+-------------+------------+
+
+
++---------------------------------------------------------------------------+
+; th                                                                        ;
++---------------+-------------+-----------+--------+-------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To          ; To Clock ;
++---------------+-------------+-----------+--------+-------------+----------+
+; N/A           ; None        ; -2.199 ns ; Mtp[7] ; RegMtp_B[8] ; clk      ;
+; N/A           ; None        ; -2.201 ns ; Mtc[1] ; RegMtc_C[1] ; clk      ;
+; N/A           ; None        ; -2.202 ns ; Mtp[6] ; RegMtp_B[7] ; clk      ;
+; N/A           ; None        ; -2.230 ns ; Mtc[0] ; RegMtc_C[0] ; clk      ;
+; N/A           ; None        ; -2.416 ns ; Mtc[3] ; RegMtc_C[3] ; clk      ;
+; N/A           ; None        ; -2.422 ns ; Mtc[4] ; RegMtc_C[4] ; clk      ;
+; N/A           ; None        ; -2.436 ns ; Mtp[3] ; RegMtp_B[4] ; clk      ;
+; N/A           ; None        ; -2.478 ns ; Mtc[5] ; RegMtc_C[5] ; clk      ;
+; N/A           ; None        ; -2.480 ns ; Mtc[7] ; RegMtc_C[7] ; clk      ;
+; N/A           ; None        ; -2.486 ns ; Mtc[6] ; RegMtc_C[6] ; clk      ;
+; N/A           ; None        ; -2.494 ns ; Mtp[2] ; RegMtp_B[3] ; clk      ;
+; N/A           ; None        ; -2.665 ns ; St     ; state.S1    ; clk      ;
+; N/A           ; None        ; -2.667 ns ; Mtp[1] ; RegMtp_B[2] ; clk      ;
+; N/A           ; None        ; -2.674 ns ; Mtp[5] ; RegMtp_B[6] ; clk      ;
+; N/A           ; None        ; -2.745 ns ; St     ; state.S0    ; clk      ;
+; N/A           ; None        ; -2.808 ns ; Mtp[4] ; RegMtp_B[5] ; clk      ;
+; N/A           ; None        ; -2.848 ns ; Mtp[0] ; RegMtp_B[1] ; clk      ;
+; N/A           ; None        ; -2.932 ns ; St     ; RegACC_A[8] ; clk      ;
+; N/A           ; None        ; -2.935 ns ; St     ; RegMtp_B[0] ; clk      ;
+; N/A           ; None        ; -3.064 ns ; Mtc[2] ; RegMtc_C[2] ; clk      ;
+; N/A           ; None        ; -3.109 ns ; St     ; RegMtc_C[0] ; clk      ;
+; N/A           ; None        ; -3.109 ns ; St     ; RegMtc_C[1] ; clk      ;
+; N/A           ; None        ; -3.109 ns ; St     ; RegMtc_C[2] ; clk      ;
+; N/A           ; None        ; -3.109 ns ; St     ; RegMtc_C[3] ; clk      ;
+; N/A           ; None        ; -3.109 ns ; St     ; RegMtc_C[4] ; clk      ;
+; N/A           ; None        ; -3.109 ns ; St     ; RegMtc_C[5] ; clk      ;
+; N/A           ; None        ; -3.109 ns ; St     ; RegMtc_C[6] ; clk      ;
+; N/A           ; None        ; -3.109 ns ; St     ; RegMtc_C[7] ; clk      ;
+; N/A           ; None        ; -3.348 ns ; St     ; RegACC_A[0] ; clk      ;
+; N/A           ; None        ; -3.348 ns ; St     ; RegACC_A[1] ; clk      ;
+; N/A           ; None        ; -3.348 ns ; St     ; RegACC_A[2] ; clk      ;
+; N/A           ; None        ; -3.348 ns ; St     ; RegACC_A[3] ; clk      ;
+; N/A           ; None        ; -3.348 ns ; St     ; RegACC_A[4] ; clk      ;
+; N/A           ; None        ; -3.348 ns ; St     ; RegACC_A[5] ; clk      ;
+; N/A           ; None        ; -3.348 ns ; St     ; RegACC_A[6] ; clk      ;
+; N/A           ; None        ; -3.348 ns ; St     ; RegACC_A[7] ; clk      ;
+; N/A           ; None        ; -3.468 ns ; St     ; RegMtp_B[1] ; clk      ;
+; N/A           ; None        ; -3.468 ns ; St     ; RegMtp_B[2] ; clk      ;
+; N/A           ; None        ; -3.468 ns ; St     ; RegMtp_B[3] ; clk      ;
+; N/A           ; None        ; -3.468 ns ; St     ; RegMtp_B[4] ; clk      ;
+; N/A           ; None        ; -3.468 ns ; St     ; RegMtp_B[5] ; clk      ;
+; N/A           ; None        ; -3.468 ns ; St     ; RegMtp_B[6] ; clk      ;
+; N/A           ; None        ; -3.468 ns ; St     ; RegMtp_B[7] ; clk      ;
+; N/A           ; None        ; -3.468 ns ; St     ; RegMtp_B[8] ; clk      ;
++---------------+-------------+-----------+--------+-------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Thu Oct 26 14:27:24 2017
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Booth_Multiplier -c Booth_Multiplier --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 336.59 MHz between source register "RegMtp_B[1]" and destination register "RegACC_A[8]" (period= 2.971 ns)
+    Info: + Longest register to register delay is 2.788 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X25_Y3_N19; Fanout = 18; REG Node = 'RegMtp_B[1]'
+        Info: 2: + IC(0.423 ns) + CELL(0.545 ns) = 0.968 ns; Loc. = LCCOMB_X26_Y3_N2; Fanout = 2; COMB Node = 'Add0~7'
+        Info: 3: + IC(0.000 ns) + CELL(0.035 ns) = 1.003 ns; Loc. = LCCOMB_X26_Y3_N4; Fanout = 2; COMB Node = 'Add0~11'
+        Info: 4: + IC(0.000 ns) + CELL(0.035 ns) = 1.038 ns; Loc. = LCCOMB_X26_Y3_N6; Fanout = 2; COMB Node = 'Add0~15'
+        Info: 5: + IC(0.000 ns) + CELL(0.035 ns) = 1.073 ns; Loc. = LCCOMB_X26_Y3_N8; Fanout = 2; COMB Node = 'Add0~19'
+        Info: 6: + IC(0.000 ns) + CELL(0.035 ns) = 1.108 ns; Loc. = LCCOMB_X26_Y3_N10; Fanout = 2; COMB Node = 'Add0~23'
+        Info: 7: + IC(0.000 ns) + CELL(0.125 ns) = 1.233 ns; Loc. = LCCOMB_X26_Y3_N12; Fanout = 2; COMB Node = 'Add0~26'
+        Info: 8: + IC(0.363 ns) + CELL(0.436 ns) = 2.032 ns; Loc. = LCCOMB_X27_Y3_N12; Fanout = 2; COMB Node = 'Add1~26'
+        Info: 9: + IC(0.000 ns) + CELL(0.096 ns) = 2.128 ns; Loc. = LCCOMB_X27_Y3_N14; Fanout = 1; COMB Node = 'Add1~30'
+        Info: 10: + IC(0.000 ns) + CELL(0.125 ns) = 2.253 ns; Loc. = LCCOMB_X27_Y3_N16; Fanout = 1; COMB Node = 'Add1~33'
+        Info: 11: + IC(0.327 ns) + CELL(0.053 ns) = 2.633 ns; Loc. = LCCOMB_X26_Y3_N28; Fanout = 1; COMB Node = 'RegACC_A[8]~1'
+        Info: 12: + IC(0.000 ns) + CELL(0.155 ns) = 2.788 ns; Loc. = LCFF_X26_Y3_N29; Fanout = 3; REG Node = 'RegACC_A[8]'
+        Info: Total cell delay = 1.675 ns ( 60.08 % )
+        Info: Total interconnect delay = 1.113 ns ( 39.92 % )
+    Info: - Smallest clock skew is 0.001 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.491 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 32; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(0.676 ns) + CELL(0.618 ns) = 2.491 ns; Loc. = LCFF_X26_Y3_N29; Fanout = 3; REG Node = 'RegACC_A[8]'
+            Info: Total cell delay = 1.472 ns ( 59.09 % )
+            Info: Total interconnect delay = 1.019 ns ( 40.91 % )
+        Info: - Longest clock path from clock "clk" to source register is 2.490 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 32; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(0.675 ns) + CELL(0.618 ns) = 2.490 ns; Loc. = LCFF_X25_Y3_N19; Fanout = 18; REG Node = 'RegMtp_B[1]'
+            Info: Total cell delay = 1.472 ns ( 59.12 % )
+            Info: Total interconnect delay = 1.018 ns ( 40.88 % )
+    Info: + Micro clock to output delay of source is 0.094 ns
+    Info: + Micro setup delay of destination is 0.090 ns
+Info: tsu for register "RegMtp_B[1]" (data pin = "St", clock pin = "clk") is 3.707 ns
+    Info: + Longest pin to register delay is 6.107 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.799 ns) = 0.799 ns; Loc. = PIN_V9; Fanout = 3; PIN Node = 'St'
+        Info: 2: + IC(3.739 ns) + CELL(0.225 ns) = 4.763 ns; Loc. = LCCOMB_X26_Y3_N30; Fanout = 11; COMB Node = 'Load~0'
+        Info: 3: + IC(0.233 ns) + CELL(0.053 ns) = 5.049 ns; Loc. = LCCOMB_X26_Y3_N22; Fanout = 8; COMB Node = 'RegMtp_B[1]~0'
+        Info: 4: + IC(0.312 ns) + CELL(0.746 ns) = 6.107 ns; Loc. = LCFF_X25_Y3_N19; Fanout = 18; REG Node = 'RegMtp_B[1]'
+        Info: Total cell delay = 1.823 ns ( 29.85 % )
+        Info: Total interconnect delay = 4.284 ns ( 70.15 % )
+    Info: + Micro setup delay of destination is 0.090 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.490 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 32; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.675 ns) + CELL(0.618 ns) = 2.490 ns; Loc. = LCFF_X25_Y3_N19; Fanout = 18; REG Node = 'RegMtp_B[1]'
+        Info: Total cell delay = 1.472 ns ( 59.12 % )
+        Info: Total interconnect delay = 1.018 ns ( 40.88 % )
+Info: tco from clock "clk" to destination pin "Product[6]" through register "RegMtp_B[7]" is 7.061 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.490 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 32; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.675 ns) + CELL(0.618 ns) = 2.490 ns; Loc. = LCFF_X25_Y3_N31; Fanout = 2; REG Node = 'RegMtp_B[7]'
+        Info: Total cell delay = 1.472 ns ( 59.12 % )
+        Info: Total interconnect delay = 1.018 ns ( 40.88 % )
+    Info: + Micro clock to output delay of source is 0.094 ns
+    Info: + Longest register to pin delay is 4.477 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X25_Y3_N31; Fanout = 2; REG Node = 'RegMtp_B[7]'
+        Info: 2: + IC(2.525 ns) + CELL(1.952 ns) = 4.477 ns; Loc. = PIN_E10; Fanout = 0; PIN Node = 'Product[6]'
+        Info: Total cell delay = 1.952 ns ( 43.60 % )
+        Info: Total interconnect delay = 2.525 ns ( 56.40 % )
+Info: th for register "RegMtp_B[8]" (data pin = "Mtp[7]", clock pin = "clk") is -2.199 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.490 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_N20; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.343 ns) + CELL(0.000 ns) = 1.197 ns; Loc. = CLKCTRL_G3; Fanout = 32; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.675 ns) + CELL(0.618 ns) = 2.490 ns; Loc. = LCFF_X25_Y3_N29; Fanout = 2; REG Node = 'RegMtp_B[8]'
+        Info: Total cell delay = 1.472 ns ( 59.12 % )
+        Info: Total interconnect delay = 1.018 ns ( 40.88 % )
+    Info: + Micro hold delay of destination is 0.149 ns
+    Info: - Shortest pin to register delay is 4.838 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.772 ns) = 0.772 ns; Loc. = PIN_AA9; Fanout = 1; PIN Node = 'Mtp[7]'
+        Info: 2: + IC(3.757 ns) + CELL(0.309 ns) = 4.838 ns; Loc. = LCFF_X25_Y3_N29; Fanout = 2; REG Node = 'RegMtp_B[8]'
+        Info: Total cell delay = 1.081 ns ( 22.34 % )
+        Info: Total interconnect delay = 3.757 ns ( 77.66 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 195 megabytes
+    Info: Processing ended: Thu Oct 26 14:27:24 2017
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

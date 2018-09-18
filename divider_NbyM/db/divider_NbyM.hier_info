@@ -1,0 +1,62 @@
+|divider_NbyM
+clk => clk.IN1
+St => Load.DATAB
+St => nxt_state.S1.DATAB
+St => Selector0.IN0
+Dividend_in[0] => RegACC.DATAB
+Dividend_in[1] => RegACC.DATAB
+Dividend_in[2] => RegACC.DATAB
+Dividend_in[3] => RegACC.DATAB
+Dividend_in[4] => RegACC.DATAB
+Dividend_in[5] => RegACC.DATAB
+Dividend_in[6] => RegACC.DATAB
+Dividend_in[7] => RegACC.DATAB
+Dividend_in[8] => RegACC.DATAB
+Dividend_in[9] => RegACC.DATAB
+Dividend_in[10] => RegACC.DATAB
+Dividend_in[11] => RegACC.DATAB
+Dividend_in[12] => RegACC.DATAB
+Dividend_in[13] => RegACC.DATAB
+Dividend_in[14] => RegACC.DATAB
+Dividend_in[15] => RegACC.DATAB
+Divisor_in[0] => RegDVsor[0].DATAIN
+Divisor_in[1] => RegDVsor[1].DATAIN
+Divisor_in[2] => RegDVsor[2].DATAIN
+Divisor_in[3] => RegDVsor[3].DATAIN
+Divisor_in[4] => RegDVsor[4].DATAIN
+Divisor_in[5] => RegDVsor[5].DATAIN
+Divisor_in[6] => RegDVsor[6].DATAIN
+Divisor_in[7] => RegDVsor[7].DATAIN
+Quotient[0] <= RegACC[0].DB_MAX_OUTPUT_PORT_TYPE
+Quotient[1] <= RegACC[1].DB_MAX_OUTPUT_PORT_TYPE
+Quotient[2] <= RegACC[2].DB_MAX_OUTPUT_PORT_TYPE
+Quotient[3] <= RegACC[3].DB_MAX_OUTPUT_PORT_TYPE
+Quotient[4] <= RegACC[4].DB_MAX_OUTPUT_PORT_TYPE
+Quotient[5] <= RegACC[5].DB_MAX_OUTPUT_PORT_TYPE
+Quotient[6] <= RegACC[6].DB_MAX_OUTPUT_PORT_TYPE
+Quotient[7] <= RegACC[7].DB_MAX_OUTPUT_PORT_TYPE
+Remainder[0] <= RegACC[8].DB_MAX_OUTPUT_PORT_TYPE
+Remainder[1] <= RegACC[9].DB_MAX_OUTPUT_PORT_TYPE
+Remainder[2] <= RegACC[10].DB_MAX_OUTPUT_PORT_TYPE
+Remainder[3] <= RegACC[11].DB_MAX_OUTPUT_PORT_TYPE
+Remainder[4] <= RegACC[12].DB_MAX_OUTPUT_PORT_TYPE
+Remainder[5] <= RegACC[13].DB_MAX_OUTPUT_PORT_TYPE
+Remainder[6] <= RegACC[14].DB_MAX_OUTPUT_PORT_TYPE
+Remainder[7] <= RegACC[15].DB_MAX_OUTPUT_PORT_TYPE
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+Ready <= Ready.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|divider_NbyM|upcounter_4bits:counter
+clk => Count[0].CLK
+clk => Count[1].CLK
+clk => Count[2].CLK
+clk => Count[3].CLK
+clk => K~reg0.CLK
+CNT => Count[0].ENA
+CNT => Count[1].ENA
+CNT => Count[2].ENA
+CNT => Count[3].ENA
+K <= K~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

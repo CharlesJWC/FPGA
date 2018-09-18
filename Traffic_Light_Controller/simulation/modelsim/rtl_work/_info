@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller/simulation/modelsim
+vtb_Traffic_Light_Controller
+Z1 !s110 1508708916
+!i10b 1
+!s100 S`VBG9iO:;I>XA`US;zd33
+IcV8XC^G8R0^bFc;PnTU2m0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1508708868
+8D:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller/tb_Traffic_Light_Controller.v
+FD:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller/tb_Traffic_Light_Controller.v
+L0 3
+Z3 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z4 !s108 1508708916.000000
+!s107 D:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller/tb_Traffic_Light_Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller|D:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller/tb_Traffic_Light_Controller.v|
+!s101 -O0
+!i113 1
+Z5 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+Z6 !s92 -vlog01compat -work work +incdir+D:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+ntb_@traffic_@light_@controller
+vTraffic_Light_Controller
+R1
+!i10b 1
+!s100 K_V3SI4zGT>`@iGgz]16M2
+IcaaJh_Z=O0XUHR=:[6N[X0
+R2
+R0
+w1508707413
+8D:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller/Traffic_Light_Controller.v
+FD:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller/Traffic_Light_Controller.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller/Traffic_Light_Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller|D:/Workspace/Altera_Quartus_Workspace/Traffic_Light_Controller/Traffic_Light_Controller.v|
+!s101 -O0
+!i113 1
+R5
+R6
+n@traffic_@light_@controller

@@ -1,0 +1,13 @@
+|Traffic_Light_Controller
+clk => state~1.DATAIN
+rst => state~3.DATAIN
+farm_sensor_X => nxt_state.S1.DATAB
+farm_sensor_X => Selector1.IN3
+farm_sensor_X => Selector0.IN2
+farm_sensor_X => nxt_state.S3.DATAB
+hwy_TL[0] <= hwy_TL[0].DB_MAX_OUTPUT_PORT_TYPE
+hwy_TL[1] <= hwy_TL[1].DB_MAX_OUTPUT_PORT_TYPE
+fwy_TL[0] <= fwy_TL[0].DB_MAX_OUTPUT_PORT_TYPE
+fwy_TL[1] <= fwy_TL[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

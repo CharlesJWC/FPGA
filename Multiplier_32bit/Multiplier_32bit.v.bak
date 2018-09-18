@@ -1,0 +1,257 @@
+`define ACC RegA[31:16]
+
+`define RegM RegA[15:0]
+
+`define M RegA[0]
+
+`define M15 RegA[15]
+
+`define MC15 RegB[15]
+
+module Multiplier_32bit(CLK, St, Mplier, Mcand, Done, Product);
+
+input CLK, St;
+
+input [15:0] Mplier, Mcand;
+
+output reg Done;
+
+output [30:0] Product;
+
+reg [2:0] state, nextstate;
+
+reg [31:0] RegA;
+
+reg [15:0] RegB;
+
+reg Sign;
+
+reg Cnt, Sh, AdSh, Load, CoM, CoP;
+
+wire [15:0] Compout;
+
+wire Pneg;
+
+wire K;
+
+wire [16:0] Addout;
+
+integer Cntr;
+
+initial begin
+
+Done = 0;
+
+state = 0;
+
+nextstate = 0;
+
+RegA = 0;
+
+RegB = 0;
+
+Sign = 0;
+
+Cnt = 0;
+
+Sh = 0;
+
+AdSh = 0;
+
+Load = 0;
+
+CoM = 0;
+
+CoP = 0;
+
+Cntr = 0;
+
+end
+
+assign Compout = (`MC15 == 1)? (!RegB) : RegB;
+
+assign Addout = {RegA[31], `ACC} + {Compout[15], Compout} + {16'd0,
+
+`MC15};
+
+assign Pneg = Sign ^ `MC15;
+
+assign K = (Cntr == 15)? 1 : 0;
+
+assign Product = RegA[30:0];
+
+always @(state, St, `M15, K, `M, Pneg)
+
+begin
+
+Load = 0; CoM = 0; AdSh = 0; Sh = 0;
+
+Cnt = 0; CoP = 0; Done = 0;
+
+case(state)
+
+0: begin
+
+if(St == 1) begin
+
+Load = 1;
+
+nextstate = 1;
+
+end
+
+else begin
+
+nextstate = 0;
+
+end
+
+end
+
+1: begin
+
+if(`M15 == 1) begin
+
+CoM = 1;
+
+end
+
+nextstate = 2;
+
+end
+
+2: begin
+
+if(K == 1) begin
+
+nextstate = 3;
+
+end
+
+else begin
+
+nextstate = 2;
+
+end
+
+if(`M == 0) begin
+
+Sh = 1;
+
+Cnt = 1;
+
+end
+
+else begin
+
+AdSh = 1;
+
+Cnt = 1;
+
+end
+
+end
+
+3: begin
+
+if(Pneg == 1) begin
+
+CoP = 1;
+
+end
+
+nextstate = 4;
+
+end
+
+4: begin
+
+Done = 1;
+
+if(St == 1) begin
+
+nextstate = 4;
+
+end
+
+else begin
+
+nextstate = 0;
+
+end
+
+end
+
+default: begin
+
+end
+
+endcase
+
+end
+
+always @(posedge CLK)
+
+begin
+
+state <= nextstate;
+
+if(Cnt == 1) begin
+
+if(Cntr == 15) begin
+
+Cntr <= 0;
+
+end
+
+else begin
+
+Cntr <= Cntr + 1;
+
+end
+
+end
+
+if(Sh == 1) begin
+
+`ACC <= {1'b0, RegA[31:17]};
+
+`RegM <= {RegA[16], RegA[15:1]};
+
+end
+
+if(AdSh == 1) begin
+
+`ACC <= Addout[16:1];
+
+`RegM <= {Addout[0], RegA[15:1]};
+
+end
+
+if(Load == 1) begin
+
+`ACC <= 0;
+
+`RegM <= Mplier;
+
+Sign <= Mplier[15];
+
+RegB <= Mcand;
+
+end
+
+if(CoM == 1) begin
+
+`RegM <= (!Mplier) + 1;
+
+end
+
+if(CoP == 1) begin
+
+RegA <= (!RegA) + 1;
+
+end
+
+end
+
+endmodule

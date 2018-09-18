@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/Mealy_Machine/Mealy_Machine.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/Mealy_Machine/tb_Mealy_Machine.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/Mealy_Machine/db/Mealy_Machine.cbx.xml
+design_name = Mealy_Machine
+instance = comp, \clk~I , clk, Mealy_Machine, 1
+instance = comp, \clk~clkctrl , clk~clkctrl, Mealy_Machine, 1
+instance = comp, \in~I , in, Mealy_Machine, 1
+instance = comp, \state.S0~0 , state.S0~0, Mealy_Machine, 1
+instance = comp, \rst~I , rst, Mealy_Machine, 1
+instance = comp, \rst~clkctrl , rst~clkctrl, Mealy_Machine, 1
+instance = comp, \state.S0 , state.S0, Mealy_Machine, 1
+instance = comp, \Selector2~0 , Selector2~0, Mealy_Machine, 1
+instance = comp, \state.S2 , state.S2, Mealy_Machine, 1
+instance = comp, \out~1 , out~1, Mealy_Machine, 1
+instance = comp, \out~I , out, Mealy_Machine, 1

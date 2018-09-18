@@ -1,0 +1,233 @@
+module pro_7segment_decoder
+(
+	input clk_50M,
+	input rst,
+	input [9:0] sw,
+	input [15:0] display_data,
+	input [2:0] ts,	// type select
+	
+	output [6:0] segment_1000,
+	output [6:0] segment_100,
+	output [6:0] segment_10,
+	output [6:0] segment_1
+);
+
+parameter	IdlE 	= 3'b000,
+			donE 	= 3'b001,
+			 OVF 	= 3'b010,
+			SW_FULL = 3'b011,
+			Src_Adr = 3'b100,
+			Dst_Adr = 3'b101,
+			Data_16 = 3'b110,
+			ADDR	= 3'b111;
+			
+reg [1:0] ALU_Mode_2;
+reg [1:0] pre_ALU_Mode_2;
+wire decpos;
+
+wire [3:0] digit_1000;
+wire [3:0] digit_100;
+wire [3:0] digit_10;
+wire [3:0] digit_1;
+
+wire [13:0] mod_10000;
+wire [13:0] mod_1000;
+wire [9:0] mod_100;
+wire [6:0] mod_10;
+wire c_flag;
+
+// 1s Timer
+wire clk_10M;	// PLL회로로부터 10MHz 클럭신호 입력
+reg clk_100K;
+reg clk_1K;
+reg clk_10;
+reg clk_1;
+
+reg[5:0] cnt_10M;	// 10MHz 클럭신호 카운트 
+reg[5:0] cnt_100K;	// 100KHz 클럭신호 카운트 
+reg[5:0] cnt_1K;	// 1KHz 클럭신호 카운트 
+reg[3:0] cnt_10;	// 10Hz 클럭신호 카운트
+
+assign decpos = (display_data > 16'd9999 || ts == Src_Adr)? clk_1 : 0;
+
+assign c_flag = (ts == IdlE | ts == donE | ts == OVF)? 1:0;
+
+assign mod_10000 = (ts == Data_16)? display_data - (14'd10000*(display_data/14'd10000)) : 14'bXXXXXXXXXXXXXX;	// R10^4 (Result - 16bit)
+
+assign digit_1000 =
+			(ts == ADDR)? 4'd15 : // -
+			(ts == Data_16)? (decpos)? display_data/14'd10000 : mod_10000/10'd1000 :	// 10^4 : 10^3 (Result - 16bit)
+			(ts == IdlE)? 4'd1 : // I
+			(ts == donE)? 4'd2 : // d 
+			(ts ==  OVF)? 4'd15: // -
+			(ts == SW_FULL)? sw/10'd1000 :	// 10^3 (Input - 10bit)
+			(ts == Src_Adr)? (decpos)? sw[9:6]/4'd10 : 4'd15 : // 10^1 (SAR1 - 4bit) : -
+			(ts == Dst_Adr)? sw[4:1]/4'd10 : // 10^1 (DAR  - 4bit)
+			4'bXXXX;						 
+assign mod_1000 = 
+			(ts == Data_16)? (decpos)? display_data-digit_1000*14'd10000 : mod_10000-digit_1000*10'd1000 :	// R10^3 : R10^2 (Result - 16bit)
+			(ts == SW_FULL)? sw - (digit_1000*10'd1000) : // R10^2 (Input - 10bit)
+			(ts == Src_Adr)? sw[9:6]-(digit_1000*4'd10) : // R10^0 (SAR1 - 4bit)
+			(ts == Dst_Adr)? sw[4:1]-(digit_1000*4'd10) : // R10^0 (DAR  - 4bit)
+			14'bXXXXXXXXXXXXXX;
+
+assign digit_100 = 
+			(ts == ADDR)? 4'd15 : // -
+			(ts == Data_16)? (decpos)? mod_1000/10'd1000 : mod_1000/7'd100 :	// 10^3 : 10^2 (Result - 16bit)
+			(ts == IdlE)? 4'd2 : // d
+			(ts == donE)? 4'd5 : // o
+			(ts ==  OVF)? 4'd9 : // O
+			(ts == SW_FULL)? mod_1000 / 7'd100 : // 10^2 (Input - 10bit)
+			(ts == Src_Adr)? (decpos)? mod_1000 : 4'd15 : // 10^0 (SAR1 - 4bit) : -
+			(ts == Dst_Adr)? mod_1000 :  // 10^0 (DAR  - 4bit)
+			4'bXXXX;	
+assign mod_100 = 
+			(ts == Data_16)? (decpos)? mod_1000-digit_100*10'd1000 : mod_1000-digit_100*7'd100 : // R10^2 : R10^1 (Result - 16bit)
+			(ts == SW_FULL)? mod_1000 - (digit_100*7'd100) : // R10^1 (Input - 10bit)
+			10'bXXXXXXXXXX;
+
+assign digit_10 = 
+			(ts == ADDR)? sw[3:0]/4'd10 : // 10^1 (addr - 4bit)
+			(ts == Data_16)? (decpos)? mod_100/7'd100 : mod_100/4'd10 : // 10^2 : 10^1 (Result - 16bit)
+			(ts == IdlE)? 4'd3 : // l
+			(ts == donE)? 4'd6 : // n 
+			(ts ==  OVF)? 4'd10: // F
+			(ts == SW_FULL)? mod_100/4'd10 : // 10^1 (Input - 10bit)
+			(ts == Src_Adr)? (decpos)? sw[5:2]/4'd10 : 4'd15 : // 10^1 (SAR2 - 4bit) : - 
+			(ts == Dst_Adr)? {1'b0, sw[5], ALU_Mode_2} : // 10^0 (ALU_Mode - 3bit)
+			4'bXXXX;			 
+assign mod_10 =
+			(ts == ADDR)? sw[3:0] - (digit_10*4'd10) : // R10^0 (addr - 4bit)
+			(ts == Data_16)? (decpos)? mod_100-digit_10*7'd100 : mod_100-digit_10*4'd10 : // R10^1 : R10^0 (Result - 16bit)
+			(ts == SW_FULL)? mod_100 - (digit_10*4'd10) : // R10^0 (Input - 10bit)
+			(ts == Src_Adr)? sw[5:2] - (digit_10*4'd10) : // R10^0 (SAR2 - 4bit)
+			7'bXXXXXXX;
+
+assign digit_1 =
+			(ts == ADDR)? mod_10 : // 10^0 (addr - 4bit) 
+			(ts == Data_16)? (decpos)? mod_10/4'd10 : mod_10 : // 10^1 : 10^0 (Result - 16bit)
+			(ts == IdlE)? 4'd4 : // E
+			(ts == donE)? 4'd4 : // E 
+			(ts ==  OVF)? 4'd15: // -
+			(ts == SW_FULL)? mod_10 : // 10^0 (Input - 10bit)
+			(ts == Src_Adr)? (decpos)? mod_10 : {2'd0, sw[1:0]} : // 10^0 (SAR2 - 4bit) : opcode
+			(ts == Dst_Adr)? {3'b000, sw[0]} : // 10^0 (Output_Mode - 1bit)
+			4'bXXXX;								  
+			
+initial
+begin
+	ALU_Mode_2 = 2'd0;
+	pre_ALU_Mode_2 = 2'd0;
+	clk_100K = 1'b0;
+	clk_1K = 1'b0;
+	clk_10 = 1'b0;
+	clk_1 = 1'b0;
+
+	cnt_10M = 6'd0;	
+	cnt_100K = 6'd0;
+	cnt_1K = 6'd0;
+	cnt_10 = 4'd0;
+end
+			
+always @(sw, ts, pre_ALU_Mode_2)
+begin
+	if(ts == Src_Adr)
+	begin
+		ALU_Mode_2 <= sw[1:0];
+	end
+	else ALU_Mode_2 <= pre_ALU_Mode_2;
+end			
+
+always @(ALU_Mode_2)
+begin
+	pre_ALU_Mode_2 <= ALU_Mode_2; 
+end
+			
+bcd_7segment bcd_7segment_1000(digit_1000, segment_1000, c_flag);
+bcd_7segment bcd_7segment_100(digit_100, segment_100, c_flag);
+bcd_7segment bcd_7segment_10(digit_10, segment_10, c_flag);
+bcd_7segment bcd_7segment_1(digit_1, segment_1, c_flag);
+
+my_clock_gen clock_gen	// 클럭 신호 모듈 입출력 신호 이름을 통한 매핑
+(
+	.areset(rst),			// reset 신호 매핑
+	.inclk0(clk_50M),		// 50MHz 입력 클럭신호 매핑
+	.c0(clk_10M),			// 10MHz 출력 클럭신호 매핑
+	.locked()				// 위상 고정 사용하지 않음
+);
+
+
+always @(posedge clk_10M or posedge rst)	// 10MHz 클럭신호 혹은 Reset신호 상승엣지 시
+begin
+   if(rst)	// Reset신호 발생시
+   begin   
+      cnt_10M <= 6'd0;	// 10MHz 클럭 카운트 초기화
+      clk_100K <= 1'b0;	// 100KHz 클럭 신호 초기화
+   end
+   else 
+   begin
+      if(cnt_10M == 6'd49)			// 40MHz 클럭 50번 카운트 한 경우
+      begin
+         cnt_10M <= 6'd0;			// 40MHz 클럭 카운트 초기화 
+         clk_100K <= ~clk_100K;		// 클럭신호 Toggle // 총 100번 카운트 시 한주기 클럭 발생 (100KHz 클럭)
+      end
+      else cnt_10M <= cnt_10M + 1'd1;	// 50번 미만의 경우에는 단순히 카운트
+   end
+end
+
+always @(posedge clk_100K or posedge rst) // 100KHz 클럭신호 혹은 Reset신호 상승엣지 시
+begin 
+   if(rst)	// Reset신호 발생시
+   begin   
+      cnt_100K <= 6'd0;	// 100KHz 클럭 카운트 초기화
+      clk_1K <= 1'b0;	// 1KHz 클럭 신호 초기화
+   end
+   else
+   begin
+      if(cnt_100K == 6'd49)		// 100KHz 클럭 50번 카운트 한 경우
+      begin   
+         cnt_100K <= 6'd0;		// 200KHz 클럭 카운트 초기화 
+         clk_1K <= ~clk_1K;		// 클럭신호 Toggle // 총 100번 카운트 시 한주기 클럭 발생 (1KHz 클럭)
+      end
+      else
+      cnt_100K <= cnt_100K + 1'd1;	// 50번 미만의 경우에는 단순히 카운트
+   end
+end
+
+always @(posedge clk_1K or posedge rst)	// 1KHz 클럭신호 혹은 Reset신호 상승엣지 시
+begin
+   if(rst)	// Reset신호 발생시
+   begin
+      cnt_1K <= 6'd0;	// 1KHz 클럭 카운트 초기화
+      clk_10 <= 1'b0;	// 10Hz 클럭 신호 초기화
+   end
+   else 
+   begin
+      if(cnt_1K == 6'd49)	// 1KHz 클럭 50번 카운트 한 경우
+      begin 
+         cnt_1K <= 6'd0;	// 1KHz 클럭 카운트 초기화 
+         clk_10 <= ~clk_10;	// 클럭신호 Toggle // 총 100번 카운트 시 한주기 클럭 발생 (10Hz 클럭)
+      end
+      else cnt_1K <= cnt_1K +1'd1;	// 50번 미만의 경우에는 단순히 카운트
+   end
+end
+
+always @(posedge clk_10 or posedge rst) // 10Hz 클럭신호 혹은 Reset신호 상승엣지 시
+begin
+   if(rst)	// Reset신호 발생시
+   begin
+      cnt_10 <= 4'd0;	// 10Hz 클럭 카운트 초기화
+      clk_1 <= 1'b0;	// 1Hz 클럭 신호 초기화
+   end
+   else
+   begin
+      if(cnt_10 == 4'd9)	// 10Hz 클럭 10번 카운트 한 경우 
+      begin
+         cnt_10 <= 4'd0;	// 10Hz 클럭 카운트 초기화 
+         clk_1 <= ~clk_1;	// 클럭신호 Toggle // 총 20번 카운트 시 한주기 클럭 발생 (1Hz 클럭)
+      end
+      else cnt_10 <= cnt_10 + 1'd1;	// 10번 미만의 경우에는 단순히 카운트
+   end
+end
+
+endmodule

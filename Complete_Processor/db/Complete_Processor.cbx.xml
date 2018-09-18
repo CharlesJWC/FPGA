@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Complete_Processor">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|ALU:pro_alu|lpm_mult:Mult0" CBX_FILE_NAME="mult_l8t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div12" CBX_FILE_NAME="lpm_divide_aem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div3" CBX_FILE_NAME="lpm_divide_nfm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_1gm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div13" CBX_FILE_NAME="lpm_divide_tcm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div4" CBX_FILE_NAME="lpm_divide_tcm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div8" CBX_FILE_NAME="lpm_divide_hem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div10" CBX_FILE_NAME="lpm_divide_dem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div14" CBX_FILE_NAME="lpm_divide_0dm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div5" CBX_FILE_NAME="lpm_divide_tcm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div9" CBX_FILE_NAME="lpm_divide_tcm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_9ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|RAM_Register:pro_rr|altsyncram:RAM_REG_rtl_0" CBX_FILE_NAME="altsyncram_f3n1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_rfm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_divide:Div6" CBX_FILE_NAME="lpm_divide_rfm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]" CBX_FILE_NAME="add_sub_9ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|ALU:pro_alu|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_3gm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|RAM_Register:pro_rr|altsyncram:RAM_REG_rtl_1" CBX_FILE_NAME="altsyncram_f3n1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Complete_Processor|pro_7segment_decoder:pro_7sd|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_4ch.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

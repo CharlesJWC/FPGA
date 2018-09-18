@@ -1,0 +1,29 @@
+module tb_fullAdder_4bits();
+
+wire [3:0] sum_t;
+wire c_out_t;
+reg [3:0] a_t;
+reg [3:0] b_t;
+reg c_in_t;
+
+fullAdder_4bits fullAdder4_tb
+(
+	.sum(sum_t),
+	.c_out(c_out_t),
+	.a(a_t),
+	.b(b_t),
+	.c_in(c_in_t)
+);
+
+initial
+begin
+a_t=4'b0000; b_t=4'b0000; c_in_t=1'b0; 
+#5 a_t=4'b0011; b_t=4'b0100;
+#5 a_t=4'b0001; b_t=4'b0101; c_in_t=1'b1;
+#5 a_t=4'b1001; b_t=4'b1001;
+#5 a_t=4'b1010; b_t=4'b1111;
+#5 a_t=4'b1010; b_t=4'b0101; 
+#5 a_t=4'b0000; b_t=4'b0000; c_in_t=1'b0; 
+end
+
+endmodule

@@ -1,0 +1,113 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+7
+3500
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+Booth_Multiplier
+# storage
+db|Booth_Multiplier.(0).cnf
+db|Booth_Multiplier.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+booth_multiplier.v
+142727a8a729f61aaefb409f608e4f2d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+S0
+00
+PARAMETER_UNSIGNED_BIN
+DEF
+S1
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+S2
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+|
+}
+# macro_sequence
+MPNum8MPCNum8PDNum15 MPCNum8MPNum8MPCNum8MPCNum8MPCNum8B1RegMtp_B[1]B0RegMtp_B[0]B1RegMtp_B[1]B0RegMtp_B[0]MPCNum8MPCNum8MPNum8MPCNum8MPCNum8MPCNum8
+# end
+# entity
+upcounter_3bits
+# storage
+db|Booth_Multiplier.(1).cnf
+db|Booth_Multiplier.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+upcounter_3bits.v
+c26095d853beada32147bee5965613f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+booth_multiplier.v
+142727a8a729f61aaefb409f608e4f2d
+}
+# hierarchies {
+upcounter_3bits:counter
+}
+# macro_sequence
+MPNum8MPNum8
+# end
+# complete
+

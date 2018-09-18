@@ -1,0 +1,117 @@
+Quartus II
+Version 9.1 Build 222 10/21/2009 SJ Web Edition
+7
+3500
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+multiplier_4bit
+# storage
+db|multiplier_4bit.(0).cnf
+db|multiplier_4bit.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multiplier_4bit.v
+ab44a05a75f9151bd695ed6776602045
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+S0
+00
+PARAMETER_UNSIGNED_BIN
+DEF
+S1
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+S2
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+S3
+11
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+|
+}
+# macro_sequence
+MPNum16MPCNum16ACCNum32ACCNum32MPCNum16MPCNum16MPCNum16MPCNum16ACCNum32CMCRegMtc[`MPCNum-1]MPCNum16ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]ACCNum32ACCNum32MPCNum16CMCRegMtc[`MPCNum-1]MPCNum16ACC_MRegACC[`MPNum-1:0]MPNum16ACC_MRegACC[`MPNum-1:0]MPNum16ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]ACCNum32ACCNum32MPCNum16ACCNum32ACCNum32MPCNum16ACC_MRegACC[`MPNum-1:0]MPNum16MPNum16ACC_HRegACC[`ACCNum-1:`ACCNum-`MPCNum]ACCNum32ACCNum32MPCNum16MPCNum16ACC_MRegACC[`MPNum-1:0]MPNum16MPNum16MRegACC[0]MRegACC[0]MRegACC[0]
+# end
+# entity
+upcounter_4bits
+# storage
+db|multiplier_4bit.(1).cnf
+db|multiplier_4bit.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+upcounter_4bits.v
+895f78ba664731e229761a2d158bd6d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# include_file {
+multiplier_4bit.v
+ab44a05a75f9151bd695ed6776602045
+}
+# hierarchies {
+upcounter_4bits:counter
+}
+# macro_sequence
+MPNum16MPNum16
+# end
+# complete
+

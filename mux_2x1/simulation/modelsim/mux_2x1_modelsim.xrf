@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/mux_2x1/mux_2x1.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/mux_2x1/tb_mux_2x1.v
+source_file = 1, D:/Workspace/Altera_Quartus_Workspace/mux_2x1/db/mux_2x1.cbx.xml
+design_name = mux_2x1
+instance = comp, \select~I , select, mux_2x1, 1
+instance = comp, \in1~I , in1, mux_2x1, 1
+instance = comp, \in0~I , in0, mux_2x1, 1
+instance = comp, \out~0 , out~0, mux_2x1, 1
+instance = comp, \out~I , out, mux_2x1, 1

@@ -1,0 +1,4 @@
+set tool_name "ModelSim (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {MJ_Microprocessor.vo MJ_Microprocessor_v.sdo}}
+}
